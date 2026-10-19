@@ -95,6 +95,15 @@ const PHI_FIELDS = new Set([
   'classid',
   'client_name',
   'clientname',
+  // Stedi eligibility (insurance verification agent). Stedi's camelCase `dateOfBirth` lowercases to
+  // `dateofbirth`, which `date_of_birth` above does not catch. `subscriber` is Stedi's object holding
+  // name, DOB, member id and address. `say` is the sentence read to the caller and includes their name.
+  'dateofbirth',
+  'subscriber',
+  'dependents',
+  'preferred_name',
+  'preferredname',
+  'say',
 ])
 
 const isPhiKey = (key: string) => PHI_FIELDS.has(key.toLowerCase())

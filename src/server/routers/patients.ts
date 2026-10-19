@@ -1,5 +1,4 @@
 import { Router } from 'express'
-import type { ZodType } from 'zod'
 import { patientController } from '@clyde-api/server/controllers/patient/PatientController'
 import {
   CreatePatientBodySchema,
@@ -7,19 +6,9 @@ import {
   PatientIdParamsSchema,
 } from '@clyde-api/server/controllers/patient/schemas'
 import { asyncHandler } from '@clyde-api/utils/asyncHandler'
-import { AppError } from '@clyde-api/types/errors'
+import { parse } from '@clyde-api/utils/validate'
 
 const router = Router()
-
-/** Parse `input` with `schema`, or throw a 400 that names the first bad field. */
-const parse = <T>(schema: ZodType<T>, input: unknown, requestId?: string): T => {
-  const result = schema.safeParse(input)
-  if (!result.success) {
-    const issue = result.error.issues[0]
-    throw AppError.validation(issue.message, { requestId, path: issue.path.join('.') })
-  }
-  return result.data
-}
 
 /**
  * GET /patients?limit=50

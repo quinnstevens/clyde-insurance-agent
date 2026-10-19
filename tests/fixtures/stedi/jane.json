@@ -1,0 +1,1921 @@
+{
+  "meta": {
+    "senderId": "STEDI",
+    "submitterId": "117151744",
+    "applicationMode": "test",
+    "traceId": "01M58SKN0J77BEN26NZFJEKDKT",
+    "outboundTraceId": "01M58SKN0J77BEN26NZFJEKDKT"
+  },
+  "controlNumber": "562090847",
+  "reassociationKey": "562090847",
+  "tradingPartnerServiceId": "61101",
+  "provider": {
+    "providerName": "MEDICAL PROVIDER",
+    "entityIdentifier": "Provider",
+    "entityType": "Non-Person Entity",
+    "npi": "1999999984"
+  },
+  "subscriber": {
+    "memberId": "HUMANA123",
+    "firstName": "JANE",
+    "lastName": "DOE",
+    "middleName": "L",
+    "gender": "F",
+    "entityIdentifier": "Insured or Subscriber",
+    "entityType": "Person",
+    "dateOfBirth": "19750505",
+    "groupNumber": "11223344",
+    "address": {
+      "address1": "101 MAIN ST",
+      "city": "ATLANTA",
+      "state": "GA",
+      "postalCode": "303010001"
+    }
+  },
+  "subscriberTraceNumbers": [
+    {
+      "traceTypeCode": "1",
+      "traceType": "Current Transaction Trace Numbers",
+      "referenceIdentification": "000011112222333",
+      "originatingCompanyIdentifier": "0101010101"
+    }
+  ],
+  "payer": {
+    "entityIdentifier": "Payer",
+    "entityType": "Non-Person Entity",
+    "name": "HUMANA",
+    "payorIdentification": "61101"
+  },
+  "planInformation": {
+    "groupNumber": "11223344",
+    "groupDescription": "HUMANA INSURANCE COMPANY",
+    "hicNumber": "1A22BB3CC44"
+  },
+  "planDateInformation": {
+    "planBegin": "20240101",
+    "service": "20240917"
+  },
+  "planStatus": [
+    {
+      "statusCode": "1",
+      "status": "Active Coverage",
+      "planDetails": "Humana Gold Plan",
+      "serviceTypeCodes": [
+        "30"
+      ]
+    },
+    {
+      "statusCode": "1",
+      "status": "Active Coverage",
+      "serviceTypeCodes": [
+        "1",
+        "54",
+        "33",
+        "98",
+        "88",
+        "UC",
+        "47",
+        "50",
+        "AL",
+        "MH",
+        "35",
+        "86",
+        "48"
+      ]
+    },
+    {
+      "statusCode": "1",
+      "status": "Active Coverage",
+      "serviceTypeCodes": [
+        "1"
+      ]
+    },
+    {
+      "statusCode": "1",
+      "status": "Active Coverage",
+      "serviceTypeCodes": [
+        "MH"
+      ]
+    },
+    {
+      "statusCode": "1",
+      "status": "Active Coverage",
+      "serviceTypeCodes": [
+        "47"
+      ]
+    }
+  ],
+  "benefitsInformation": [
+    {
+      "code": "1",
+      "name": "Active Coverage",
+      "coverageLevelCode": "EMP",
+      "coverageLevel": "Employee Only",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "planCoverage": "Humana Gold Plan",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "additionalInformation": [
+        {
+          "description": "000 111"
+        },
+        {
+          "description": "Medicare PPO"
+        },
+        {
+          "description": "Member cannot be balanced billed for medical copayments, coinsurance or deductibles on this Plan. Member is cost-share protected by the state Medicaid. In WA if Medicaid is not cost-share protecting members, Humana will process the claim paying member cost share."
+        },
+        {
+          "description": "THIS MEMBER MAY BE ELIGIBLE FOR A FREE FITNESS MEMBERSHIP."
+        }
+      ]
+    },
+    {
+      "code": "L",
+      "name": "Primary Care Provider",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "benefitsRelatedEntity": {
+        "entityIdentifier": "Primary Care Provider",
+        "entityType": "Person",
+        "entityName": "John",
+        "entityFirstname": "Dough",
+        "address": {
+          "address1": "202 Main St",
+          "city": "Tulsa",
+          "state": "OK",
+          "postalCode": "74008"
+        },
+        "contactInformation": {
+          "contacts": [
+            {
+              "communicationMode": "Telephone",
+              "communicationNumber": "9999999999"
+            }
+          ]
+        }
+      },
+      "benefitsRelatedEntities": [
+        {
+          "entityIdentifier": "Primary Care Provider",
+          "entityType": "Person",
+          "entityName": "John",
+          "entityFirstname": "Dough",
+          "address": {
+            "address1": "202 Main St",
+            "city": "Tulsa",
+            "state": "OK",
+            "postalCode": "74008"
+          },
+          "contactInformation": {
+            "contacts": [
+              {
+                "communicationMode": "Telephone",
+                "communicationNumber": "9999999999"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "quantityQualifierCode": "YY",
+      "quantityQualifier": "Years",
+      "benefitQuantity": "26",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "additionalInformation": [
+        {
+          "description": "MAX DEPENDENT AGE"
+        }
+      ]
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "quantityQualifierCode": "YY",
+      "quantityQualifier": "Years",
+      "benefitQuantity": "31",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "additionalInformation": [
+        {
+          "description": "MAX STUDENT AGE"
+        }
+      ]
+    },
+    {
+      "code": "L",
+      "name": "Primary Care Provider",
+      "planCoverage": "AFFILIATION/CENTER",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "benefitsRelatedEntity": {
+        "entityIdentifier": "Group",
+        "entityType": "Non-Person Entity",
+        "entityName": "OK EMP PPO",
+        "entityIdentification": "PI",
+        "entityIdentificationValue": "34343434"
+      },
+      "benefitsRelatedEntities": [
+        {
+          "entityIdentifier": "Group",
+          "entityType": "Non-Person Entity",
+          "entityName": "OK EMP PPO",
+          "entityIdentification": "PI",
+          "entityIdentificationValue": "34343434"
+        }
+      ]
+    },
+    {
+      "code": "W",
+      "name": "Other Source of Data",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "additionalInformation": [
+        {
+          "description": "NO DESCRIPTION PROVIDED"
+        }
+      ]
+    },
+    {
+      "code": "1",
+      "name": "Active Coverage",
+      "serviceTypeCodes": [
+        "1",
+        "54",
+        "33",
+        "98",
+        "88",
+        "UC",
+        "47",
+        "50",
+        "AL",
+        "MH",
+        "35",
+        "86",
+        "48"
+      ],
+      "serviceTypes": [
+        "Medical Care",
+        "Long Term Care",
+        "Chiropractic",
+        "Professional (Physician) Visit - Office",
+        "Pharmacy",
+        "Urgent Care",
+        "Hospital",
+        "Hospital - Outpatient",
+        "Vision (Optometry)",
+        "Mental Health",
+        "Dental Care",
+        "Emergency Services",
+        "Hospital - Inpatient"
+      ],
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "1",
+      "name": "Active Coverage",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "1"
+      ],
+      "serviceTypes": [
+        "Medical Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "49"
+      ],
+      "serviceTypes": [
+        "Hospital - Room and Board"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "36",
+      "timeQualifier": "Admission",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "INPATIENT HOSPITAL ROOM AND BOARD"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "name": "Co-Payment",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "49"
+      ],
+      "serviceTypes": [
+        "Hospital - Room and Board"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "36",
+      "timeQualifier": "Admission",
+      "benefitAmount": "2000",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "INPATIENT HOSPITAL ROOM AND BOARD"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "49"
+      ],
+      "serviceTypes": [
+        "Hospital - Room and Board"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "INPATIENT HOSPITAL ROOM AND BOARD"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "48"
+      ],
+      "serviceTypes": [
+        "Hospital - Inpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "INPATIENT HOSPITAL"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "48"
+      ],
+      "serviceTypes": [
+        "Hospital - Inpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "INPATIENT HOSPITAL"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "86"
+      ],
+      "serviceTypes": [
+        "Emergency Services"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ER"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "name": "Co-Payment",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "86"
+      ],
+      "serviceTypes": [
+        "Emergency Services"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "26",
+      "timeQualifier": "Episode",
+      "benefitAmount": "100",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ER"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "86"
+      ],
+      "serviceTypes": [
+        "Emergency Services"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ANESTHESIA"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "name": "Co-Payment",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "86"
+      ],
+      "serviceTypes": [
+        "Emergency Services"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "26",
+      "timeQualifier": "Episode",
+      "benefitAmount": "100",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ANESTHESIA"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "86"
+      ],
+      "serviceTypes": [
+        "Emergency Services"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ER"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "86"
+      ],
+      "serviceTypes": [
+        "Emergency Services"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ANESTHESIA"
+        }
+      ]
+    },
+    {
+      "code": "I",
+      "name": "Non-Covered",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "35"
+      ],
+      "serviceTypes": [
+        "Dental Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "VIEW CONTRACT FOR COVERAGE DETAILS"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "MH",
+        "98"
+      ],
+      "serviceTypes": [
+        "Mental Health",
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT PCP"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "MH"
+      ],
+      "serviceTypes": [
+        "Mental Health"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT SPECIALIST"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "MH",
+        "98"
+      ],
+      "serviceTypes": [
+        "Mental Health",
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT PCP"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "MH",
+        "98"
+      ],
+      "serviceTypes": [
+        "Mental Health",
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT SPECIALIST"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "1",
+      "name": "Active Coverage",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "MH"
+      ],
+      "serviceTypes": [
+        "Mental Health"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT SPECIALIST"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "AL"
+      ],
+      "serviceTypes": [
+        "Vision (Optometry)"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ROUTINE VISION EXAM"
+        }
+      ]
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "AL"
+      ],
+      "serviceTypes": [
+        "Vision (Optometry)"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitAmount": "40",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ROUTINE VISION EXAM"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "AL"
+      ],
+      "serviceTypes": [
+        "Vision (Optometry)"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "ROUTINE VISION EXAM"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL SURGERY"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL ANESTHESIA"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL MRI SCAN"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL CAT SCAN"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL SURGERY"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL ANESTHESIA"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL MRI SCAN"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "50"
+      ],
+      "serviceTypes": [
+        "Hospital - Outpatient"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "OUTPATIENT HOSPITAL CAT SCAN"
+        }
+      ]
+    },
+    {
+      "code": "1",
+      "name": "Active Coverage",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "47"
+      ],
+      "serviceTypes": [
+        "Hospital"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "INPATIENT HOSPITAL"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "UC"
+      ],
+      "serviceTypes": [
+        "Urgent Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE URGENT CARE"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "UC"
+      ],
+      "serviceTypes": [
+        "Urgent Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE PREFERRED URGENT CARE"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "UC"
+      ],
+      "serviceTypes": [
+        "Urgent Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH URGENT CARE"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "UC"
+      ],
+      "serviceTypes": [
+        "Urgent Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE URGENT CARE"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "UC"
+      ],
+      "serviceTypes": [
+        "Urgent Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE PREFERRED URGENT CARE"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "UC"
+      ],
+      "serviceTypes": [
+        "Urgent Care"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH URGENT CARE"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "serviceTypeCodes": [
+        "88"
+      ],
+      "serviceTypes": [
+        "Pharmacy"
+      ],
+      "benefitAmount": "550",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "serviceTypeCodes": [
+        "88"
+      ],
+      "serviceTypes": [
+        "Pharmacy"
+      ],
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "B",
+      "name": "Co-Payment",
+      "serviceTypeCodes": [
+        "88"
+      ],
+      "serviceTypes": [
+        "Pharmacy"
+      ],
+      "benefitAmount": "35",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "LEVEL 3"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "name": "Co-Payment",
+      "serviceTypeCodes": [
+        "88"
+      ],
+      "serviceTypes": [
+        "Pharmacy"
+      ],
+      "benefitAmount": "35",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT PCP"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT SPECIALIST"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT FREESTANDING RAD CTR"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT COMP OUTPT REHAB FACILITY"
+        }
+      ]
+    },
+    {
+      "code": "B",
+      "name": "Co-Payment",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT PCP"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitPercent": "1",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT PCP"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "TELEHEALTH VISIT SPECIALIST"
+        }
+      ],
+      "eligibilityAdditionalInformation": {
+        "codeListQualifierCode": "ZZ",
+        "codeListQualifier": "Mutually Defined",
+        "industryCode": "10",
+        "industry": "Telehealth Provided in Patient's Home"
+      },
+      "eligibilityAdditionalInformationList": [
+        {
+          "codeListQualifierCode": "ZZ",
+          "codeListQualifier": "Mutually Defined",
+          "industryCode": "10",
+          "industry": "Telehealth Provided in Patient's Home"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT PCP"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT SPECIALIST"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT FREESTANDING RAD CTR"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE VISIT COMP OUTPT REHAB FACILITY"
+        }
+      ]
+    },
+    {
+      "code": "I",
+      "name": "Non-Covered",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "98"
+      ],
+      "serviceTypes": [
+        "Professional (Physician) Visit - Office"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "PHYSICIAN OFFICE DOCTOR ON DEMAND NOT COVERED"
+        }
+      ]
+    },
+    {
+      "code": "A",
+      "name": "Co-Insurance",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "33"
+      ],
+      "serviceTypes": [
+        "Chiropractic"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitPercent": "0.2",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "MEDICARE COVERED MANIPULATIONS"
+        }
+      ]
+    },
+    {
+      "code": "I",
+      "name": "Non-Covered",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "33"
+      ],
+      "serviceTypes": [
+        "Chiropractic"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "MANIPULATIONS"
+        }
+      ]
+    },
+    {
+      "code": "I",
+      "name": "Non-Covered",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "33"
+      ],
+      "serviceTypes": [
+        "Chiropractic"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "RADIOLOGY"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "33"
+      ],
+      "serviceTypes": [
+        "Chiropractic"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "MEDICARE COVERED MANIPULATIONS"
+        }
+      ]
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes",
+      "additionalInformation": [
+        {
+          "description": "SEE EXACT BENEFIT TO VERIFY IF DEDUCTIBLE APPLIES"
+        }
+      ]
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "insuranceTypeCode": "PR",
+      "insuranceType": "Preferred Provider Organization (PPO)",
+      "timeQualifierCode": "23",
+      "timeQualifier": "Calendar Year",
+      "benefitAmount": "8000",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "200",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "8500",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "200",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "4000",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "30000",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "9000000",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "250",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "C",
+      "name": "Deductible",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "0",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "10000",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "F",
+      "name": "Limitations",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "9000000",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "400",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "12000",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "24",
+      "timeQualifier": "Year to Date",
+      "benefitAmount": "400",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "G",
+      "name": "Out of Pocket (Stop Loss)",
+      "coverageLevelCode": "IND",
+      "coverageLevel": "Individual",
+      "serviceTypeCodes": [
+        "30"
+      ],
+      "serviceTypes": [
+        "Health Benefit Plan Coverage"
+      ],
+      "timeQualifierCode": "29",
+      "timeQualifier": "Remaining",
+      "benefitAmount": "7500",
+      "inPlanNetworkIndicatorCode": "Y",
+      "inPlanNetworkIndicator": "Yes"
+    },
+    {
+      "code": "P",
+      "name": "Benefit Disclaimer",
+      "inPlanNetworkIndicatorCode": "W",
+      "inPlanNetworkIndicator": "Not Applicable",
+      "additionalInformation": [
+        {
+          "description": "THIS IS ONLY AN ESTIMATION OF BENEFITS, AND ALL PAYMENTS ARE SUBJECT TO POLICY GUIDELINES, MEDICAL NECESSITY, AND MEMBER ELIGIBILITY AT THE TIME SERVICES ARE PERFORMED."
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "x12": "ISA*00*          *00*          *ZZ*STEDI          *01*117151744      *261019*0039*^*00501*562090847*0*T*`~GS*HB*STEDI*117151744*20261019*003958*1*X*005010X279A1~ST*271*0001*005010X279A1~BHT*0022*11*01M58SKN0J77BEN26NZFJEKDKT*20260325*0901~HL*1**20*1~NM1*PR*2*HUMANA*****PI*61101~HL*2*1*21*1~NM1*1P*2*MEDICAL PROVIDER*****XX*1999999984~HL*3*2*22*0~TRN*1*000011112222333*0101010101~NM1*IL*1*DOE*JANE*L***MI*HUMANA123~REF*6P*11223344~REF*6P*11223344*HUMANA INSURANCE COMPANY~REF*F6*1A22BB3CC44~N3*101 MAIN ST~N4*ATLANTA*GA*303010001~DMG*D8*19750505*F~DTP*346*D8*20240101~DTP*472*D8*20240917~EB*1*EMP*30*PR*Humana Gold Plan*******W~MSG*000 111~MSG*Medicare PPO~MSG*Member cannot be balanced billed for medical copayments, coinsurance or deductibles on this Plan. Member is cost-share protected by the state Medicaid. In WA if Medicaid is not cost-share protecting members, Humana will process the claim paying member cost share.~MSG*THIS MEMBER MAY BE ELIGIBLE FOR A FREE FITNESS MEMBERSHIP.~EB*L***********W~LS*2120~NM1*P3*1*John*Dough~N3*202 Main St~N4*Tulsa*OK*74008~PER*IC**TE*9999999999~LE*2120~EB*F**30******YY*26**W~MSG*MAX DEPENDENT AGE~EB*F**30******YY*31**W~MSG*MAX STUDENT AGE~EB*L****AFFILIATION/CENTER*******W~LS*2120~NM1*GW*2*OK EMP PPO*****PI*34343434~LE*2120~EB*W***********W~MSG*NO DESCRIPTION PROVIDED~EB*1**1^54^33^98^88^UC^47^50^AL^MH^35^86^48*********W~EB*1*IND*1*PR***0*****Y~EB*A*IND*49*PR**36**0****Y~MSG*INPATIENT HOSPITAL ROOM AND BOARD~EB*B*IND*49*PR**36*2000*****Y~MSG*INPATIENT HOSPITAL ROOM AND BOARD~EB*C*IND*49*PR***0*****Y~MSG*INPATIENT HOSPITAL ROOM AND BOARD~EB*A*IND*48*PR**23**0****Y~MSG*INPATIENT HOSPITAL~EB*C*IND*48*PR***0*****Y~MSG*INPATIENT HOSPITAL~EB*A*IND*86*PR**23**0****Y~MSG*ER~EB*B*IND*86*PR**26*100*****Y~MSG*ER~EB*A*IND*86*PR**23**0****Y~MSG*ANESTHESIA~EB*B*IND*86*PR**26*100*****Y~MSG*ANESTHESIA~EB*C*IND*86*PR***0*****Y~MSG*ER~EB*C*IND*86*PR***0*****Y~MSG*ANESTHESIA~EB*I*IND*35*PR***0*****Y~MSG*VIEW CONTRACT FOR COVERAGE DETAILS~EB*A*IND*MH^98*PR**23**0****Y~MSG*TELEHEALTH VISIT PCP~III*ZZ*10~EB*A*IND*MH*PR**23**0****Y~MSG*TELEHEALTH VISIT SPECIALIST~III*ZZ*10~EB*C*IND*MH^98*PR***0*****Y~MSG*TELEHEALTH VISIT PCP~III*ZZ*10~EB*C*IND*MH^98*PR***0*****Y~MSG*TELEHEALTH VISIT SPECIALIST~III*ZZ*10~EB*1*IND*MH*PR***0*****Y~MSG*PHYSICIAN OFFICE VISIT SPECIALIST~EB*A*IND*AL*PR**23**0****Y~MSG*ROUTINE VISION EXAM~EB*F*IND*AL*PR**23*40*****Y~MSG*ROUTINE VISION EXAM~EB*C*IND*AL*PR***0*****Y~MSG*ROUTINE VISION EXAM~EB*A*IND*50*PR****.2****Y~MSG*OUTPATIENT HOSPITAL SURGERY~EB*A*IND*50*PR****.2****Y~MSG*OUTPATIENT HOSPITAL ANESTHESIA~EB*A*IND*50*PR****.2****Y~MSG*OUTPATIENT HOSPITAL MRI SCAN~EB*A*IND*50*PR****.2****Y~MSG*OUTPATIENT HOSPITAL CAT SCAN~EB*C*IND*50*PR***250*****Y~MSG*OUTPATIENT HOSPITAL SURGERY~EB*C*IND*50*PR***250*****Y~MSG*OUTPATIENT HOSPITAL ANESTHESIA~EB*C*IND*50*PR***250*****Y~MSG*OUTPATIENT HOSPITAL MRI SCAN~EB*C*IND*50*PR***250*****Y~MSG*OUTPATIENT HOSPITAL CAT SCAN~EB*1*IND*47*PR***0*****Y~MSG*INPATIENT HOSPITAL~EB*A*IND*UC*PR****.2****Y~MSG*PHYSICIAN OFFICE URGENT CARE~EB*A*IND*UC*PR****.2****Y~MSG*PHYSICIAN OFFICE PREFERRED URGENT CARE~EB*A*IND*UC*PR****.2****Y~MSG*TELEHEALTH URGENT CARE~EB*C*IND*UC*PR***0*****Y~MSG*PHYSICIAN OFFICE URGENT CARE~EB*C*IND*UC*PR***0*****Y~MSG*PHYSICIAN OFFICE PREFERRED URGENT CARE~EB*C*IND*UC*PR***0*****Y~MSG*TELEHEALTH URGENT CARE~EB*C**88****550*****Y~EB*C**88****0*****Y~EB*B**88****35*****Y~MSG*LEVEL 3~EB*B**88****35*****Y~EB*A*IND*98*PR****.2****Y~MSG*PHYSICIAN OFFICE VISIT PCP~EB*A*IND*98*PR****.2****Y~MSG*PHYSICIAN OFFICE VISIT SPECIALIST~EB*A*IND*98*PR****.2****Y~MSG*PHYSICIAN OFFICE VISIT FREESTANDING RAD CTR~EB*A*IND*98*PR****.2****Y~MSG*PHYSICIAN OFFICE VISIT COMP OUTPT REHAB FACILITY~EB*B*IND*98*PR**23*0*****Y~MSG*TELEHEALTH VISIT PCP~III*ZZ*10~EB*F*IND*98*PR**23**1****Y~MSG*TELEHEALTH VISIT PCP~III*ZZ*10~EB*A*IND*98*PR****.2****Y~MSG*TELEHEALTH VISIT SPECIALIST~III*ZZ*10~EB*C*IND*98*PR***250*****Y~MSG*PHYSICIAN OFFICE VISIT PCP~EB*C*IND*98*PR***250*****Y~MSG*PHYSICIAN OFFICE VISIT SPECIALIST~EB*C*IND*98*PR***250*****Y~MSG*PHYSICIAN OFFICE VISIT FREESTANDING RAD CTR~EB*C*IND*98*PR***250*****Y~MSG*PHYSICIAN OFFICE VISIT COMP OUTPT REHAB FACILITY~EB*I*IND*98*PR***0*****Y~MSG*PHYSICIAN OFFICE DOCTOR ON DEMAND NOT COVERED~EB*A*IND*33*PR****.2****Y~MSG*MEDICARE COVERED MANIPULATIONS~EB*I*IND*33*PR***0*****Y~MSG*MANIPULATIONS~EB*I*IND*33*PR***0*****Y~MSG*RADIOLOGY~EB*C*IND*33*PR***250*****Y~MSG*MEDICARE COVERED MANIPULATIONS~EB*C*IND*30*PR**23*250*****Y~MSG*SEE EXACT BENEFIT TO VERIFY IF DEDUCTIBLE APPLIES~EB*G*IND*30*PR**23*8000*****Y~EB*G*IND*30***24*200*****W~EB*G*IND*30***29*8500*****W~EB*G*IND*30***24*200*****Y~EB*G*IND*30***29*4000*****Y~EB*F*IND*30***24*30000*****W~EB*F*IND*30***29*9000000*****W~EB*C*IND*30***24*250*****W~EB*C*IND*30***29*0*****W~EB*F*IND*30***24*10000*****W~EB*F*IND*30***29*9000000*****W~EB*G*IND*30***24*400*****W~EB*G*IND*30***29*12000*****W~EB*G*IND*30***24*400*****Y~EB*G*IND*30***29*7500*****Y~EB*P***********W~MSG*THIS IS ONLY AN ESTIMATION OF BENEFITS, AND ALL PAYMENTS ARE SUBJECT TO POLICY GUIDELINES, MEDICAL NECESSITY, AND MEMBER ELIGIBILITY AT THE TIME SERVICES ARE PERFORMED.~SE*175*0001~GE*1*1~IEA*1*562090847~",
+  "eligibilitySearchId": "01a15199-d3fe-737d-929f-5fd8fdfc7b62",
+  "id": "ec_01a15199-d3ef-7577-91b4-22b9ee70bf1e"
+}

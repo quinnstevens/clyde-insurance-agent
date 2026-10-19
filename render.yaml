@@ -35,3 +35,7 @@ services:
       # Blueprint is applied and never stores it in the repo.
       # - key: OPENAI_API_KEY
       #   sync: false
+      - key: STEDI_API_KEY
+        sync: false
+      - key: VAPI_TOOL_SECRET
+        sync: false
