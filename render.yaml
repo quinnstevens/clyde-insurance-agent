@@ -17,7 +17,7 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
-    # Deploy every push to main once GitHub checks (CI) pass.
+    # Deploy every push to main.
     autoDeployTrigger: commit
     envVars:
       - key: NODE_ENV
