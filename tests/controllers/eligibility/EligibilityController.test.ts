@@ -95,9 +95,7 @@ describe('EligibilityController', () => {
         plan_name: 'Open Access Plus',
         cost_share: { copay: null, coinsurance_percent: 10, deductible: 250, deductible_remaining: null },
       })
-      expect(result.say).toContain("you're all set")
-      expect(result.say).toContain('$250 deductible')
-      expect(result.say).toContain('10 percent coinsurance')
+      expect(result.say).toBe("Thanks, James. We accept Cigna and your coverage is active, so you're all set.")
     })
 
     it('Jane: Humana is active but not accepted', async () => {

@@ -1,36 +1,14 @@
 import { acceptedPayerList } from '@clyde-api/config/clinic'
-import type { CostShare } from './summarizeEligibility'
 
 /**
  * What the agent says for each outcome. Kept in one place so wording can be reviewed (and changed)
  * without touching the decision logic. Written to be spoken: short sentences, no abbreviations.
  */
-
-const money = (amount: number): string =>
-  Number.isInteger(amount) ? `$${amount.toLocaleString('en-US')}` : `$${amount.toFixed(2)}`
-
-export const describeCostShare = (costShare: CostShare): string => {
-  const { copay, coinsurancePercent, deductible, deductibleRemaining } = costShare
-
-  if (copay !== null) return `Your copay for this visit should be ${money(copay)}.`
-
-  if (deductible !== null) {
-    const remaining = deductibleRemaining !== null ? `, with ${money(deductibleRemaining)} left to meet this year` : ''
-    const after =
-      coinsurancePercent !== null ? `, and after that you pay ${coinsurancePercent} percent coinsurance.` : '.'
-    return `Your plan doesn't list a flat copay for this visit. Instead you have a ${money(deductible)} deductible${remaining}${after}`
-  }
-
-  if (coinsurancePercent !== null) {
-    return `Your plan doesn't list a flat copay for this visit. Instead you pay ${coinsurancePercent} percent coinsurance.`
-  }
-
-  return `Your plan didn't list cost details for this visit, so the front desk will confirm your cost when you check in.`
-}
-
 export const messages = {
-  acceptedActive: (name: string, payer: string, costShare: CostShare) =>
-    `Thanks, ${name}. We accept ${payer} and your coverage is active, so you're all set. ${describeCostShare(costShare)}`,
+  // Ends at "you're all set", per the clinic's expected answer. Cost share still travels in the tool
+  // result's `cost_share`, so the agent can answer a follow-up about costs from real numbers.
+  acceptedActive: (name: string, payer: string) =>
+    `Thanks, ${name}. We accept ${payer} and your coverage is active, so you're all set.`,
 
   notAcceptedActive: (name: string, payer: string) =>
     `Thanks, ${name}. Your ${payer} coverage is active, but unfortunately our clinic doesn't accept ${payer}. ` +
