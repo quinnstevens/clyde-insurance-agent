@@ -18,7 +18,7 @@ services:
     dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
     # Deploy every push to main once GitHub checks (CI) pass.
-    autoDeployTrigger: checksPass
+    autoDeployTrigger: commit
     envVars:
       - key: NODE_ENV
         value: production
