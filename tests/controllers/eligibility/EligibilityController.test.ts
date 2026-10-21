@@ -95,7 +95,10 @@ describe('EligibilityController', () => {
         plan_name: 'Open Access Plus',
         cost_share: { copay: null, coinsurance_percent: 10, deductible: 250, deductible_remaining: null },
       })
-      expect(result.say).toBe("Thanks, James. We accept Cigna and your coverage is active, so you're all set.")
+      expect(result.say).toBe(
+        "Thanks, James. We accept Cigna and your coverage is active, so you're all set. " +
+          "Your plan doesn't list a flat copay. Instead, you pay 10 percent of the cost after a $250 deductible.",
+      )
     })
 
     it('Jane: Humana is active but not accepted', async () => {

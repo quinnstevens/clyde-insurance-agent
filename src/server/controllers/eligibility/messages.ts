@@ -1,14 +1,39 @@
 import { acceptedPayerList } from '@clyde-api/config/clinic'
+import type { CostShare } from './summarizeEligibility'
+
+const dollars = (amount: number) => `$${amount.toLocaleString('en-US')}`
+
+/**
+ * What the caller can expect to pay, built only from numbers the payer returned. Never estimates:
+ * when the payer lists nothing usable, it says so and points to the front desk.
+ */
+const costShareSentence = ({ copay, coinsurancePercent, deductible, deductibleRemaining }: CostShare): string => {
+  if (copay !== null) return `Your copay for a visit should be ${dollars(copay)}.`
+
+  const deductiblePart =
+    deductible === null
+      ? null
+      : deductibleRemaining === null
+        ? `a ${dollars(deductible)} deductible`
+        : `a ${dollars(deductible)} deductible, with ${dollars(deductibleRemaining)} of it left to meet`
+
+  if (coinsurancePercent !== null && deductiblePart !== null)
+    return `Your plan doesn't list a flat copay. Instead, you pay ${coinsurancePercent} percent of the cost after ${deductiblePart}.`
+  if (coinsurancePercent !== null)
+    return `Your plan doesn't list a flat copay. Instead, you pay ${coinsurancePercent} percent of the cost.`
+  if (deductiblePart !== null)
+    return `Your plan doesn't list a flat copay, and it has ${deductiblePart}. Our front desk can go over what a visit will cost.`
+  return `Your plan didn't list a copay, so our front desk can go over what a visit will cost.`
+}
 
 /**
  * What the agent says for each outcome. Kept in one place so wording can be reviewed (and changed)
  * without touching the decision logic. Written to be spoken: short sentences, no abbreviations.
  */
 export const messages = {
-  // Ends at "you're all set", per the clinic's expected answer. Cost share still travels in the tool
-  // result's `cost_share`, so the agent can answer a follow-up about costs from real numbers.
-  acceptedActive: (name: string, payer: string) =>
-    `Thanks, ${name}. We accept ${payer} and your coverage is active, so you're all set.`,
+  // Leads with "you're all set", per the clinic's expected answer, then what they'll pay.
+  acceptedActive: (name: string, payer: string, costShare: CostShare) =>
+    `Thanks, ${name}. We accept ${payer} and your coverage is active, so you're all set. ${costShareSentence(costShare)}`,
 
   notAcceptedActive: (name: string, payer: string) =>
     `Thanks, ${name}. Your ${payer} coverage is active, but unfortunately our clinic doesn't accept ${payer}. ` +

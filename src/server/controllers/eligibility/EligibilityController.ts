@@ -98,7 +98,7 @@ export class EligibilityController {
     const active = summary.coverage === 'active'
     const [outcome, say]: [EligibilityOutcome, string] = payerAccepted
       ? active
-        ? ['accepted_active', messages.acceptedActive(name, payerName)]
+        ? ['accepted_active', messages.acceptedActive(name, payerName, summary.costShare)]
         : ['accepted_inactive', messages.acceptedInactive(name, payerName)]
       : active
         ? ['not_accepted_active', messages.notAcceptedActive(name, payerName)]
