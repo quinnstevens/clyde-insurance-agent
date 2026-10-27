@@ -4,4 +4,6 @@
  */
 export interface RequestContext {
   requestId?: string
+  /** Vapi's call id, on requests from the phone agent. */
+  callId?: string
 }

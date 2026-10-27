@@ -6,6 +6,14 @@ const allowedOrigins = (process.env.CORS_ORIGINS || '')
   .map((origin) => origin.trim())
   .filter(Boolean)
 
+// An entry like `https://*.lovable.app` allows any subdomain (Lovable gives every preview its own).
+const escapeRegExp = (text: string) => text.replace(/[.+?^${}()|[\]\\]/g, '\\$&')
+const originPatterns = allowedOrigins.map(
+  (origin) => new RegExp(`^${origin.split('*').map(escapeRegExp).join('[a-z0-9-]+(?:\\.[a-z0-9-]+)*')}$`, 'i'),
+)
+
+export const isAllowedOrigin = (origin: string): boolean => originPatterns.some((pattern) => pattern.test(origin))
+
 export default () =>
   cors({
     origin: (origin, callback) => {
@@ -15,7 +23,7 @@ export default () =>
       // Production: strict allowlist from CORS_ORIGINS
       if (!origin) return callback(null, true) // allow non-browser requests (curl, server-to-server)
 
-      if (allowedOrigins.includes(origin)) {
+      if (isAllowedOrigin(origin)) {
         callback(null, true)
       } else {
         callback(new Error(`CORS: Origin ${origin} not allowed`), false)

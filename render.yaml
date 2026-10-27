@@ -31,10 +31,17 @@ services:
       # The internal connection string stays on Render's private network, which doesn't use SSL.
       - key: DB_SSL
         value: 'false'
+      # The clinic FAQ app (built in Lovable) calls /faqs from the browser.
+      - key: USE_CORS
+        value: 'true'
+      - key: CORS_ORIGINS
+        value: https://*.lovable.app,https://*.lovableproject.com
       # Secrets for your take-home go here with `sync: false`: Render asks for the value when the
       # Blueprint is applied and never stores it in the repo.
-      # - key: OPENAI_API_KEY
-      #   sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ADMIN_API_KEY
+        sync: false
       - key: STEDI_API_KEY
         sync: false
       - key: VAPI_TOOL_SECRET

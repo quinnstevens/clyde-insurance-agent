@@ -17,8 +17,8 @@ router.use(requireToolSecret)
 router.post(
   '/tools',
   asyncHandler(async (req, res) => {
-    const ctx = { requestId: req.context?.requestId }
-    const { message } = parse(VapiServerMessageBodySchema, req.body, ctx.requestId)
+    const { message } = parse(VapiServerMessageBodySchema, req.body, req.context?.requestId)
+    const ctx = { requestId: req.context?.requestId, callId: message.call?.id }
 
     if (message.type !== 'tool-calls') {
       res.json({})

@@ -12,6 +12,8 @@
     "typecheck": "tsc --project tsconfig.test.json",
     "lint": "eslint \"src/**/*.ts\"",
     "test": "APP_ENV=test jest",
+    "test:db": "APP_ENV=test jest --config jest.db.config.js --runInBand",
+    "faqs:eval": "TS_NODE_PROJECT=tsconfig.test.json ts-node -r tsconfig-paths/register scripts/evaluate-faqs.ts",
     "db:up": "docker compose up -d --wait",
     "db:down": "docker compose down",
     "migrate": "knex migrate:latest",

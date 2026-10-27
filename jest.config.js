@@ -4,6 +4,8 @@ module.exports = {
   testEnvironment: 'node',
   roots: ['<rootDir>/tests'],
   testMatch: ['**/*.test.ts'],
+  // Database tests need Docker; they run separately with `yarn test:db`.
+  testPathIgnorePatterns: ['/node_modules/', '\\.db\\.test\\.ts$'],
   transform: {
     '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },

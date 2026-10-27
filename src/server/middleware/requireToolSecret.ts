@@ -1,14 +1,8 @@
-import { timingSafeEqual } from 'node:crypto'
 import type { NextFunction, Request, Response } from 'express'
 import { AppError } from '@clyde-api/types/errors'
 import { isProduction } from '@clyde-api/utils/env'
 import logger from '@clyde-api/utils/logger'
-
-const safeEqual = (a: string, b: string): boolean => {
-  const left = Buffer.from(a)
-  const right = Buffer.from(b)
-  return left.length === right.length && timingSafeEqual(left, right)
-}
+import { safeEqual } from '@clyde-api/utils/safeEqual'
 
 /**
  * Guards the tool endpoints with the shared secret configured on the Vapi tool. Vapi can send it as

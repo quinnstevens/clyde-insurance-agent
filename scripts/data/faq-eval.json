@@ -1,0 +1,345 @@
+{
+  "paraphrases": [
+    {
+      "question": "what time do y'all open tomorrow",
+      "expected": "What time do you open in the morning?"
+    },
+    {
+      "question": "are you guys open this saturday",
+      "expected": "Are you open on Saturdays?"
+    },
+    {
+      "question": "can i come in on a sunday",
+      "expected": "Are you open on Sundays?"
+    },
+    {
+      "question": "how late are you open on thursday",
+      "expected": "Do you have evening hours?"
+    },
+    {
+      "question": "where is the clinic",
+      "expected": "Where are you located?"
+    },
+    {
+      "question": "is there somewhere i can park",
+      "expected": "Is there parking?"
+    },
+    {
+      "question": "do i have to pay to park",
+      "expected": "Is parking free?"
+    },
+    {
+      "question": "can i take the bus there",
+      "expected": "Can I take public transit to the clinic?"
+    },
+    {
+      "question": "can my mom get in with her wheelchair",
+      "expected": "Is the clinic wheelchair accessible?"
+    },
+    {
+      "question": "are you closed for mardi gras",
+      "expected": "Are you open on Mardi Gras day?"
+    },
+    {
+      "question": "how do i book an appointment",
+      "expected": "How do I make an appointment?"
+    },
+    {
+      "question": "can i schedule online",
+      "expected": "Can I book an appointment online?"
+    },
+    {
+      "question": "are you taking new patients right now",
+      "expected": "Are you accepting new patients?"
+    },
+    {
+      "question": "can i just walk in",
+      "expected": "Do you take walk-ins?"
+    },
+    {
+      "question": "i need to cancel my appointment",
+      "expected": "How do I cancel my appointment?"
+    },
+    {
+      "question": "is there a charge if i miss my appointment",
+      "expected": "Is there a fee for missing an appointment?"
+    },
+    {
+      "question": "what if i'm running late",
+      "expected": "What happens if I'm late to my appointment?"
+    },
+    {
+      "question": "which doctors work there",
+      "expected": "Who are your doctors?"
+    },
+    {
+      "question": "do i need a referral from my primary care doctor",
+      "expected": "Do I need a referral to be seen?"
+    },
+    {
+      "question": "can you do video visits",
+      "expected": "Do you offer telehealth visits?"
+    },
+    {
+      "question": "do you take medicare",
+      "expected": "Do you take Medicare?"
+    },
+    {
+      "question": "do you accept blue cross",
+      "expected": "Do you take Blue Cross Blue Shield?"
+    },
+    {
+      "question": "i have vsp can i use it there",
+      "expected": "Do you take VSP?"
+    },
+    {
+      "question": "do you take tricare for military families",
+      "expected": "Do you take Tricare?"
+    },
+    {
+      "question": "will insurance pay for lasik",
+      "expected": "Does insurance cover LASIK?"
+    },
+    {
+      "question": "is cataract surgery covered by insurance",
+      "expected": "Does insurance cover cataract surgery?"
+    },
+    {
+      "question": "can i pay with my hsa card",
+      "expected": "Can I use my HSA or FSA card?"
+    },
+    {
+      "question": "can i pay by check",
+      "expected": "Do you take checks?"
+    },
+    {
+      "question": "do you have payment plans",
+      "expected": "Do you offer payment plans?"
+    },
+    {
+      "question": "how much is an eye exam if i don't have insurance",
+      "expected": "How much is an eye exam without insurance?"
+    },
+    {
+      "question": "what's the price of lasik",
+      "expected": "How much does LASIK cost?"
+    },
+    {
+      "question": "how much are glasses",
+      "expected": "How much do glasses cost?"
+    },
+    {
+      "question": "is there an extra charge to dilate my eyes",
+      "expected": "Is dilation an extra charge?"
+    },
+    {
+      "question": "how long does the exam take",
+      "expected": "How long does an eye exam take?"
+    },
+    {
+      "question": "how long will my eyes stay dilated",
+      "expected": "How long does dilation last?"
+    },
+    {
+      "question": "can i drive home after you dilate my eyes",
+      "expected": "Can I drive after my eyes are dilated?"
+    },
+    {
+      "question": "what should i bring to my appointment",
+      "expected": "What should I bring to my eye exam?"
+    },
+    {
+      "question": "how long is a glasses prescription valid",
+      "expected": "How long is my glasses prescription good for?"
+    },
+    {
+      "question": "can you teach me to put in contacts",
+      "expected": "I've never worn contacts. Can you teach me how to put them in?"
+    },
+    {
+      "question": "do you have contacts for astigmatism",
+      "expected": "Do you fit contacts for astigmatism?"
+    },
+    {
+      "question": "can you mail my contacts to me",
+      "expected": "Can you ship contacts to my house?"
+    },
+    {
+      "question": "my contact prescription is expired can i still order",
+      "expected": "My contact lens prescription expired. Can I still order contacts?"
+    },
+    {
+      "question": "is it ok to sleep in contacts",
+      "expected": "Can I sleep in my contacts?"
+    },
+    {
+      "question": "how long until my glasses are ready",
+      "expected": "How long does it take to get glasses?"
+    },
+    {
+      "question": "can you put new lenses in my old frames",
+      "expected": "Can I bring my own frames?"
+    },
+    {
+      "question": "my glasses are crooked can you fix them",
+      "expected": "Do you adjust glasses for free?"
+    },
+    {
+      "question": "do you do lasik",
+      "expected": "Do you do LASIK?"
+    },
+    {
+      "question": "does lasik hurt",
+      "expected": "Does LASIK hurt?"
+    },
+    {
+      "question": "when can i go back to work after lasik",
+      "expected": "How long is recovery after LASIK?"
+    },
+    {
+      "question": "will i need someone to drive me after surgery",
+      "expected": "Do I need someone to drive me after surgery?"
+    },
+    {
+      "question": "how old does my kid have to be for an eye exam",
+      "expected": "Do you have a minimum age for eye exams?"
+    },
+    {
+      "question": "my son failed the eye test at school",
+      "expected": "My child failed a vision screening at school. What should I do?"
+    },
+    {
+      "question": "i got bleach in my eye",
+      "expected": "I got a chemical in my eye. What should I do?"
+    },
+    {
+      "question": "i'm seeing flashes and a bunch of new floaters",
+      "expected": "I'm seeing flashes of light and new floaters. What should I do?"
+    },
+    {
+      "question": "i think i have pink eye can you treat it",
+      "expected": "Do you treat pink eye?"
+    },
+    {
+      "question": "can you refill my glaucoma drops",
+      "expected": "Can you refill my eye drop prescription?"
+    },
+    {
+      "question": "how do i get my records",
+      "expected": "How do I get my medical records?"
+    },
+    {
+      "question": "i forgot my portal password",
+      "expected": "I forgot my patient portal password. What do I do?"
+    },
+    {
+      "question": "do you have someone who speaks spanish",
+      "expected": "Do you speak Spanish?"
+    },
+    {
+      "question": "can i bring my service dog",
+      "expected": "Can I bring my service animal?"
+    }
+  ],
+  "ambiguous": [
+    {
+      "question": "how much is an exam",
+      "acceptable": [
+        "How much is an eye exam without insurance?",
+        "How much is a contact lens exam?",
+        "How much is a children's eye exam?"
+      ]
+    },
+    {
+      "question": "when are you open",
+      "acceptable": ["What are your hours?", "What time do you close today?", "What time do you open in the morning?"]
+    },
+    {
+      "question": "how long does it take",
+      "acceptable": [
+        "How long does an eye exam take?",
+        "How long does it take to get glasses?",
+        "How long does it take to get my contacts?",
+        "How long will I be at my appointment?"
+      ]
+    },
+    {
+      "question": "do you take my insurance",
+      "acceptable": ["What insurance do you accept?", "Are you in network with my plan?"]
+    },
+    {
+      "question": "how much does surgery cost",
+      "acceptable": ["How much does LASIK cost?", "How much is cataract surgery without insurance?"]
+    },
+    {
+      "question": "how do i get my prescription",
+      "acceptable": ["How do I get my glasses prescription?", "Can I get a copy of my prescription?"]
+    },
+    {
+      "question": "how long is recovery",
+      "acceptable": ["How long is recovery after LASIK?", "How long is recovery after cataract surgery?"]
+    }
+  ],
+  "off_topic": [
+    {
+      "question": "do you sell hearing aids"
+    },
+    {
+      "question": "can i get a flu shot there"
+    },
+    {
+      "question": "what's the weather like today"
+    },
+    {
+      "question": "do you do teeth cleaning"
+    },
+    {
+      "question": "can you recommend a good restaurant nearby"
+    },
+    {
+      "question": "do you validate parking at the mall"
+    },
+    {
+      "question": "can i bring my cat to the appointment"
+    },
+    {
+      "question": "do you offer botox"
+    },
+    {
+      "question": "how do i reset my iphone"
+    },
+    {
+      "question": "are you hiring right now"
+    },
+    {
+      "question": "who won the saints game"
+    },
+    {
+      "question": "can you tell me a joke"
+    },
+    {
+      "question": "do you do allergy shots for hay fever"
+    },
+    {
+      "question": "what's dr ruiz's home address"
+    },
+    {
+      "question": "can i get a covid test"
+    },
+    {
+      "question": "do you sell contact lens cases shaped like hearts"
+    },
+    {
+      "question": "do you do tattoo removal"
+    },
+    {
+      "question": "can you fax my lab results from my dermatologist"
+    },
+    {
+      "question": "what's the best laptop for school"
+    },
+    {
+      "question": "do you rent wheelchairs"
+    }
+  ]
+}

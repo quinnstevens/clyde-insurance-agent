@@ -1,6 +1,7 @@
 services:
   interview-db:
-    image: postgres:17
+    # Postgres 17 with the pgvector extension, which the FAQ search needs. Same data format as postgres:17.
+    image: pgvector/pgvector:pg17
     restart: unless-stopped
     ports:
       - 2534:5432 # "CLDH" on a phone keypad; avoids clashing with another Postgres on 5432
@@ -18,7 +19,7 @@ services:
 
   # Throwaway database for tests that need a real Postgres. Data lives in tmpfs and vanishes on stop.
   interview-db-test:
-    image: postgres:17
+    image: pgvector/pgvector:pg17
     ports:
       - 5433:5432
     environment:

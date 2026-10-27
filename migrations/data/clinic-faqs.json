@@ -1,0 +1,1252 @@
+[
+  {
+    "category": "Hours and location",
+    "question": "What are your hours?",
+    "answer": "We're open Monday through Friday from 8 a.m. to 5 p.m., with late hours until 7 p.m. on Thursdays, and Saturdays from 9 a.m. to 1 p.m. We're closed on Sundays."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Are you open on Saturdays?",
+    "answer": "Yes, we're open Saturdays from 9 a.m. to 1 p.m. Saturday appointments fill up quickly, so we recommend booking a week or two ahead."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Are you open on Sundays?",
+    "answer": "No, we're closed on Sundays. If you have an eye emergency on a Sunday, please go to the nearest emergency room or call 911."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Do you have evening hours?",
+    "answer": "Yes, on Thursdays we stay open until 7 p.m. Every other weekday we close at 5 p.m."
+  },
+  {
+    "category": "Hours and location",
+    "question": "What time do you open in the morning?",
+    "answer": "We open at 8 a.m. Monday through Friday and at 9 a.m. on Saturdays."
+  },
+  {
+    "category": "Hours and location",
+    "question": "What time do you close today?",
+    "answer": "We close at 5 p.m. Monday, Tuesday, Wednesday and Friday, at 7 p.m. on Thursday, and at 1 p.m. on Saturday."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Are you open on holidays?",
+    "answer": "We're closed on New Year's Day, Mardi Gras day, Memorial Day, the Fourth of July, Labor Day, Thanksgiving and the day after, and Christmas Eve and Christmas Day."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Are you open on Mardi Gras day?",
+    "answer": "No, we're closed on Mardi Gras day. Parade routes can also make getting here hard the week before, so give yourself extra time."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Where are you located?",
+    "answer": "We're at 1420 Magazine Street in New Orleans, between Melpomene and Terpsichore Streets."
+  },
+  {
+    "category": "Hours and location",
+    "question": "What is your address?",
+    "answer": "Our address is 1420 Magazine Street, New Orleans, Louisiana 70130."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Is there parking?",
+    "answer": "Yes, we have a free patient parking lot behind the building. The entrance is on Terpsichore Street. Street parking is also available but is metered."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Is parking free?",
+    "answer": "Yes, our patient lot behind the building is free. The metered street parking out front is not."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Can I take public transit to the clinic?",
+    "answer": "Yes. The 11 Magazine bus stops right in front of the building, and the St. Charles streetcar stop at Melpomene is about a ten minute walk."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Is the clinic wheelchair accessible?",
+    "answer": "Yes. The entrance, exam rooms and restrooms are all wheelchair accessible, and we have a ramp from the parking lot. Let us know if you need any help when you arrive."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Do you have more than one location?",
+    "answer": "No, we have one location, at 1420 Magazine Street in New Orleans."
+  },
+  {
+    "category": "Hours and location",
+    "question": "Do you have a waiting room for family members?",
+    "answer": "Yes, family members are welcome to wait in our waiting room. We have free Wi-Fi and a small play area for kids."
+  },
+  {
+    "category": "Appointments",
+    "question": "How do I make an appointment?",
+    "answer": "You can book through our patient portal on our website, or our front desk can book it for you during business hours."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can I book an appointment online?",
+    "answer": "Yes, you can book online through the patient portal on our website. You'll see open times for each doctor and can pick the one that works for you."
+  },
+  {
+    "category": "Appointments",
+    "question": "Are you accepting new patients?",
+    "answer": "Yes, we're accepting new patients for eye exams, contact lens fittings, and surgical consultations."
+  },
+  {
+    "category": "Appointments",
+    "question": "How far out are you booking appointments?",
+    "answer": "Routine exams are usually available within one to two weeks. Saturday and Thursday evening slots book up faster."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can I get a same-day appointment?",
+    "answer": "We hold a few same-day slots each morning for urgent problems like red eyes, eye pain, or something in your eye. Call as early as you can, since they go quickly."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do you take walk-ins?",
+    "answer": "We don't take walk-ins for routine exams, but we keep same-day slots for urgent eye problems. Call first so we can make sure a doctor is free."
+  },
+  {
+    "category": "Appointments",
+    "question": "How do I cancel my appointment?",
+    "answer": "You can cancel through the patient portal or by calling the front desk. Please give us at least 24 hours notice."
+  },
+  {
+    "category": "Appointments",
+    "question": "How do I reschedule my appointment?",
+    "answer": "You can reschedule in the patient portal, or the front desk can move it for you. Please try to do it at least 24 hours ahead."
+  },
+  {
+    "category": "Appointments",
+    "question": "What is your cancellation policy?",
+    "answer": "We ask for at least 24 hours notice if you need to cancel or reschedule. Missed appointments or cancellations with less than 24 hours notice have a 35 dollar fee."
+  },
+  {
+    "category": "Appointments",
+    "question": "Is there a fee for missing an appointment?",
+    "answer": "Yes, there's a 35 dollar fee for missed appointments or cancellations with less than 24 hours notice. We waive it for emergencies."
+  },
+  {
+    "category": "Appointments",
+    "question": "What happens if I'm late to my appointment?",
+    "answer": "If you're more than 15 minutes late, we may need to reschedule so we don't delay other patients. Call us if you're running late and we'll do our best to fit you in."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do you send appointment reminders?",
+    "answer": "Yes, we send a text reminder two days before your appointment and again the morning of. You can reply to confirm or cancel."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can I choose which doctor I see?",
+    "answer": "Yes. You can pick your doctor when you book online, or ask the front desk for a specific doctor."
+  },
+  {
+    "category": "Appointments",
+    "question": "Who are your doctors?",
+    "answer": "Our team includes Dr. Elena Ruiz and Dr. Samuel Okafor, our optometrists, Dr. Priya Nair, who focuses on children's eye care, and Dr. Marcus Bell, our ophthalmologist and eye surgeon."
+  },
+  {
+    "category": "Appointments",
+    "question": "What's the difference between an optometrist and an ophthalmologist?",
+    "answer": "An optometrist does eye exams, prescribes glasses and contacts, and treats many common eye conditions. An ophthalmologist is a medical doctor who also does eye surgery, like cataract surgery and LASIK."
+  },
+  {
+    "category": "Appointments",
+    "question": "How often should I get an eye exam?",
+    "answer": "Most adults should have an eye exam every one to two years, and every year if you wear contacts, have diabetes, or are over 60. Your doctor may recommend a different schedule for you."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do I need a referral to be seen?",
+    "answer": "Most patients don't need a referral. Some insurance plans, like HMO plans, require one, so check with your insurance before your visit if you're not sure."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can I bring my kids to my appointment?",
+    "answer": "Yes, children are welcome. If your eyes will be dilated, it helps to bring another adult who can watch them and drive you home."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can someone come into the exam room with me?",
+    "answer": "Yes, you're welcome to bring a family member or friend into the exam room with you."
+  },
+  {
+    "category": "Appointments",
+    "question": "How do I book an appointment for my child?",
+    "answer": "You can book a children's exam online or through the front desk. Dr. Priya Nair sees most of our younger patients."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can I book appointments for my whole family at once?",
+    "answer": "Yes, the front desk can book back-to-back appointments for your family so you only make one trip."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do you have a waitlist for earlier appointments?",
+    "answer": "Yes. Ask the front desk to add you to our waitlist, and we'll text you if an earlier time opens up."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do you offer telehealth visits?",
+    "answer": "Yes, we offer video visits for some follow-ups and for questions about your medications or test results. A full eye exam has to be done in person."
+  },
+  {
+    "category": "Appointments",
+    "question": "How long will I be at my appointment?",
+    "answer": "Plan on about an hour for a full eye exam, or up to an hour and a half if your eyes are dilated. Follow-up visits are usually 20 to 30 minutes."
+  },
+  {
+    "category": "Appointments",
+    "question": "What should I do if I can't make it to my appointment?",
+    "answer": "Please cancel or reschedule through the portal or by calling the front desk at least 24 hours ahead, so we can offer the time to someone else."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do you see patients from out of state?",
+    "answer": "Yes, we see patients from anywhere. Just check whether your insurance covers out-of-state care before your visit."
+  },
+  {
+    "category": "Appointments",
+    "question": "Can I schedule an appointment by text?",
+    "answer": "We can't book appointments by text yet, but you can reply to our reminder texts to confirm or cancel an appointment you already have."
+  },
+  {
+    "category": "Appointments",
+    "question": "Do you have a minimum age for eye exams?",
+    "answer": "We see children starting at age three. For babies and toddlers under three, we can refer you to a pediatric ophthalmologist."
+  },
+  {
+    "category": "Insurance",
+    "question": "What insurance do you accept?",
+    "answer": "We accept Aetna, Cigna, and UnitedHealthcare. If you have a different plan, you're still welcome to be seen as a self-pay patient."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Aetna?",
+    "answer": "Yes, we accept Aetna."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Cigna?",
+    "answer": "Yes, we accept Cigna."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take UnitedHealthcare?",
+    "answer": "Yes, we accept UnitedHealthcare."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Humana?",
+    "answer": "We don't currently accept Humana. You're welcome to be seen as a self-pay patient, and we can give you a receipt to submit to Humana yourself."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Blue Cross Blue Shield?",
+    "answer": "We don't currently accept Blue Cross Blue Shield. You're welcome to be seen as a self-pay patient, and we can give you a receipt for out-of-network reimbursement."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Medicare?",
+    "answer": "We don't currently accept Medicare. You're welcome to be seen as a self-pay patient."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Medicaid?",
+    "answer": "We don't currently accept Medicaid or Louisiana Healthy plans. Our front desk can share a list of nearby clinics that do."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take VSP?",
+    "answer": "We don't accept VSP or other vision-only plans directly, but we can give you an itemized receipt to submit to VSP for out-of-network reimbursement."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take EyeMed?",
+    "answer": "We don't accept EyeMed directly, but we can give you an itemized receipt to send to EyeMed for out-of-network reimbursement."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you accept vision insurance?",
+    "answer": "We don't bill vision-only plans like VSP or EyeMed directly. We can give you an itemized receipt so you can get reimbursed by your plan."
+  },
+  {
+    "category": "Insurance",
+    "question": "What's the difference between vision insurance and medical insurance?",
+    "answer": "Vision insurance usually covers routine eye exams, glasses and contacts. Medical insurance covers eye problems like infections, injuries, glaucoma and cataracts. We bill Aetna, Cigna and UnitedHealthcare medical plans."
+  },
+  {
+    "category": "Insurance",
+    "question": "Will my insurance cover a routine eye exam?",
+    "answer": "It depends on your plan. Many medical plans only cover eye exams for a medical problem, not a routine vision check. Our phone assistant or front desk can check your coverage before your visit."
+  },
+  {
+    "category": "Insurance",
+    "question": "Can you check my insurance before my appointment?",
+    "answer": "Yes. I can check whether your insurance is active right now on this call, and our front desk can go over your benefits in more detail."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do I need to bring my insurance card?",
+    "answer": "Yes, please bring your insurance card and a photo ID to every visit, especially if anything has changed since your last visit."
+  },
+  {
+    "category": "Insurance",
+    "question": "What if my insurance changed?",
+    "answer": "Please bring your new insurance card to your next visit, or tell the front desk ahead of time so we can update your file and check your new coverage."
+  },
+  {
+    "category": "Insurance",
+    "question": "Are you in network with my plan?",
+    "answer": "We're in network with Aetna, Cigna, and UnitedHealthcare. For other plans we're out of network, and you're welcome to be seen as a self-pay patient."
+  },
+  {
+    "category": "Insurance",
+    "question": "Will you bill my insurance for me?",
+    "answer": "Yes, for Aetna, Cigna and UnitedHealthcare we bill your insurance directly. For other plans, you pay at the visit and we give you a receipt to submit yourself."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take marketplace or Obamacare plans?",
+    "answer": "We accept marketplace plans from Aetna, Cigna, and UnitedHealthcare. Marketplace plans from other insurers are out of network for us."
+  },
+  {
+    "category": "Insurance",
+    "question": "Do you take Tricare?",
+    "answer": "We don't currently accept Tricare. You're welcome to be seen as a self-pay patient."
+  },
+  {
+    "category": "Insurance",
+    "question": "Does insurance cover contact lens exams?",
+    "answer": "Most medical plans don't cover the contact lens fitting part of the exam, so there's usually an extra charge. The front desk can tell you what to expect for your plan."
+  },
+  {
+    "category": "Insurance",
+    "question": "Does insurance cover LASIK?",
+    "answer": "Most insurance plans don't cover LASIK because it's considered elective. Some plans offer a discount, and we also offer payment plans."
+  },
+  {
+    "category": "Insurance",
+    "question": "Does insurance cover cataract surgery?",
+    "answer": "Yes, cataract surgery is usually covered by medical insurance when it's medically needed. We'll check your benefits and explain your costs before scheduling surgery."
+  },
+  {
+    "category": "Insurance",
+    "question": "What happens if my insurance denies a claim?",
+    "answer": "Our billing team will look into it and can help you appeal. If it's still denied, we'll let you know what you owe and offer payment options."
+  },
+  {
+    "category": "Insurance",
+    "question": "Can I use out-of-network benefits here?",
+    "answer": "Yes. If your plan has out-of-network benefits, you pay at the visit and we give you an itemized receipt to submit for reimbursement."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "What forms of payment do you accept?",
+    "answer": "We accept cash, all major credit and debit cards, HSA and FSA cards, Apple Pay, Google Pay, and CareCredit. We don't accept personal checks."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you take checks?",
+    "answer": "We don't accept personal checks. We take cash, credit and debit cards, HSA and FSA cards, Apple Pay, Google Pay, and CareCredit."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Can I use my HSA or FSA card?",
+    "answer": "Yes, you can use your HSA or FSA card for exams, glasses, contacts, and most eye care. We can give you an itemized receipt if your plan asks for one."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you take CareCredit?",
+    "answer": "Yes, we accept CareCredit, which many patients use for LASIK, glasses, and other costs insurance doesn't cover."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you offer payment plans?",
+    "answer": "Yes. For surgery, including LASIK, we offer payment plans through CareCredit, and our billing team can set up a monthly plan for larger balances."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "When is payment due?",
+    "answer": "Your copay and any self-pay charges are due at check-in. If you have a balance after insurance pays, we'll send you a bill."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do I pay my copay at check-in?",
+    "answer": "Yes, copays are collected at check-in."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "How do I pay my bill?",
+    "answer": "You can pay your bill online through the patient portal, by phone with our billing team, or in person at the front desk."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Can I pay my bill online?",
+    "answer": "Yes, you can pay your bill online through the patient portal using a card or your HSA or FSA card."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Why did I get a bill after my visit?",
+    "answer": "A bill usually means your insurance paid its part and there's a remaining balance, like a deductible or coinsurance. Our billing team can walk you through the charges."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Who do I talk to about a billing question?",
+    "answer": "Our billing team can help with any billing questions. The front desk can transfer you, or you can send them a message through the patient portal."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Can I get an itemized receipt?",
+    "answer": "Yes, you can download an itemized receipt from the patient portal, or ask the front desk to print or email one."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you charge for paperwork or forms?",
+    "answer": "We don't charge for routine forms like school or work notes. Some detailed forms, like disability paperwork, have a 25 dollar fee."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you offer a discount for paying in cash?",
+    "answer": "Yes, self-pay patients get our self-pay prices, which are already discounted. Ask the front desk for the self-pay price list."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you offer financial assistance?",
+    "answer": "Yes, we have a financial assistance program based on household income. The front desk can give you the application."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Can I get a cost estimate before my visit?",
+    "answer": "Yes, our front desk can give you an estimate based on your insurance or our self-pay prices before you come in."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you charge interest on payment plans?",
+    "answer": "Our in-house monthly payment plans don't charge interest. CareCredit has its own terms, and some of its promotional plans have no interest if paid off in time."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "What happens if I can't pay my bill?",
+    "answer": "Please reach out to our billing team. We can usually set up a monthly payment plan, and we also have a financial assistance program."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Do you send bills to collections?",
+    "answer": "We'll always contact you several times and offer a payment plan before a balance is ever sent to collections."
+  },
+  {
+    "category": "Billing and payment",
+    "question": "Is there a charge to transfer my records?",
+    "answer": "No, there's no charge to send your records to another doctor."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is an eye exam without insurance?",
+    "answer": "A comprehensive eye exam is 150 dollars for self-pay patients. Dilation is included."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is a contact lens exam?",
+    "answer": "A contact lens fitting is 75 dollars for new contact lens wearers and 50 dollars to renew an existing prescription, on top of the 150 dollar eye exam."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is a children's eye exam?",
+    "answer": "A children's eye exam is 120 dollars for self-pay patients."
+  },
+  {
+    "category": "Prices",
+    "question": "How much does LASIK cost?",
+    "answer": "LASIK is 2,200 dollars per eye. That includes the surgery and your follow-up visits for the first year. The LASIK consultation is free."
+  },
+  {
+    "category": "Prices",
+    "question": "Is the LASIK consultation free?",
+    "answer": "Yes, LASIK consultations are free. They take about an hour and a half, and your eyes will be dilated."
+  },
+  {
+    "category": "Prices",
+    "question": "How much do glasses cost?",
+    "answer": "Adult frames start at 89 dollars and go up to about 400 dollars, and kids' frames start at 69 dollars. Basic single vision lenses start at 79 dollars, and progressive lenses start at 199 dollars."
+  },
+  {
+    "category": "Prices",
+    "question": "How much do contacts cost?",
+    "answer": "It depends on the brand and type. A year's supply of daily contacts usually runs 400 to 700 dollars, and monthly contacts usually run 150 to 300 dollars. We often have rebates that lower the price."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is retinal imaging?",
+    "answer": "Optomap retinal imaging is an optional 39 dollar add-on. It takes a wide picture of the back of your eye and can sometimes be done instead of dilation."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is a visit for pink eye or an eye infection?",
+    "answer": "A medical eye visit for a problem like pink eye is 110 dollars for self-pay patients. With insurance, you'll usually just pay your copay."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is a follow-up visit?",
+    "answer": "A self-pay follow-up visit is 75 dollars. Follow-ups after LASIK in the first year are included in the surgery price."
+  },
+  {
+    "category": "Prices",
+    "question": "How much is cataract surgery without insurance?",
+    "answer": "Self-pay cataract surgery is 3,500 dollars per eye with a standard lens. Premium lenses cost extra. Most patients have it covered by medical insurance."
+  },
+  {
+    "category": "Prices",
+    "question": "How much does a glaucoma test cost?",
+    "answer": "Basic glaucoma screening, including eye pressure, is part of every comprehensive eye exam. More detailed glaucoma testing, like a visual field test, is 85 dollars for self-pay patients."
+  },
+  {
+    "category": "Prices",
+    "question": "Do you have a price list?",
+    "answer": "Yes, the front desk can email or text you our self-pay price list."
+  },
+  {
+    "category": "Prices",
+    "question": "Is dilation an extra charge?",
+    "answer": "No, dilation is included in the comprehensive eye exam at no extra cost."
+  },
+  {
+    "category": "Prices",
+    "question": "How much are prescription sunglasses?",
+    "answer": "Prescription sunglasses start at 149 dollars for frames and tinted lenses together. Polarized lenses add 60 dollars."
+  },
+  {
+    "category": "Prices",
+    "question": "How much are blue light lenses?",
+    "answer": "A blue light filter adds 40 dollars to any pair of lenses."
+  },
+  {
+    "category": "Prices",
+    "question": "Do you price match contacts?",
+    "answer": "Yes, we'll match the price of a major online retailer for the same contacts and box count. Just bring or send us the price."
+  },
+  {
+    "category": "Prices",
+    "question": "How much does it cost to replace a lost contact lens prescription?",
+    "answer": "There's no charge to send you a copy of a current prescription. If it has expired, you'll need a new contact lens exam."
+  },
+  {
+    "category": "Eye exams",
+    "question": "What happens during an eye exam?",
+    "answer": "We check your vision and your glasses prescription, test your eye pressure for glaucoma, and look at the front and back of your eyes for any health problems. The doctor will go over the results with you at the end."
+  },
+  {
+    "category": "Eye exams",
+    "question": "How long does an eye exam take?",
+    "answer": "A full eye exam takes about an hour, or up to an hour and a half if your eyes are dilated."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Will my eyes be dilated?",
+    "answer": "Most comprehensive exams include dilation, especially if it's your first visit or you're over 40. You can ask about Optomap retinal imaging, which can sometimes be done instead."
+  },
+  {
+    "category": "Eye exams",
+    "question": "How long does dilation last?",
+    "answer": "Dilation usually lasts four to six hours. Your vision will be blurry up close and your eyes will be sensitive to light during that time."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Can I drive after my eyes are dilated?",
+    "answer": "Many people can drive after dilation, but your vision may be blurry and light will feel bright. If you're not comfortable, bring someone to drive you home."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Should I bring sunglasses?",
+    "answer": "Yes, bring sunglasses if your eyes might be dilated. If you forget, we'll give you a pair of disposable ones."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Can I wear my contacts to my eye exam?",
+    "answer": "Yes, wear your contacts in, and bring your glasses and your contact lens box or prescription too. You may need to take your contacts out during the exam."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Can I go back to work after an eye exam?",
+    "answer": "Yes, though if your eyes are dilated, reading and screens may be blurry for a few hours."
+  },
+  {
+    "category": "Eye exams",
+    "question": "What is the air puff test?",
+    "answer": "The air puff test measures the pressure inside your eye, which helps us check for glaucoma. It's quick and doesn't hurt."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do you test for glaucoma?",
+    "answer": "Yes, every comprehensive eye exam includes a glaucoma check. If we see signs of glaucoma, we'll schedule more detailed testing."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do you do diabetic eye exams?",
+    "answer": "Yes. If you have diabetes, we recommend a dilated eye exam every year, and we can send the results to your primary care doctor."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Can you send my eye exam results to my doctor?",
+    "answer": "Yes, we can send your results to your primary care doctor or any specialist. Just give us their name and fax number or address."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do you do vision tests for a driver's license?",
+    "answer": "Yes, we can do a vision check and fill out the vision form for a driver's license."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do you do eye exams for work or school forms?",
+    "answer": "Yes, we can complete vision forms for work, school or sports. Bring the form to your visit."
+  },
+  {
+    "category": "Eye exams",
+    "question": "What should I bring to my eye exam?",
+    "answer": "Please bring your photo ID, insurance card, current glasses and contacts, a list of your medications, and sunglasses in case your eyes are dilated."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do I need an eye exam if I can see fine?",
+    "answer": "Yes, regular eye exams are still a good idea. Many eye diseases, like glaucoma, have no symptoms early on, and an exam can catch them before they affect your vision."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do you do dry eye evaluations?",
+    "answer": "Yes, we offer dry eye evaluations and treatment. You can book a dry eye visit, or mention it during your regular exam."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Do you check for macular degeneration?",
+    "answer": "Yes, every comprehensive exam includes a check of your retina, including the macula. If we see signs of macular degeneration, we'll go over next steps with you."
+  },
+  {
+    "category": "Eye exams",
+    "question": "How do I get my glasses prescription?",
+    "answer": "Your glasses prescription is available in the patient portal after your exam, and we can print or email a copy too."
+  },
+  {
+    "category": "Eye exams",
+    "question": "How long is my glasses prescription good for?",
+    "answer": "Our glasses prescriptions are good for two years, unless your doctor writes a shorter date."
+  },
+  {
+    "category": "Eye exams",
+    "question": "How long is my contact lens prescription good for?",
+    "answer": "Contact lens prescriptions are good for one year."
+  },
+  {
+    "category": "Eye exams",
+    "question": "Can I get a copy of my prescription?",
+    "answer": "Yes, you can find your glasses and contact lens prescriptions in the patient portal, or ask the front desk to print or email them."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Do you do contact lens fittings?",
+    "answer": "Yes, we do contact lens fittings for new and current wearers, including toric lenses for astigmatism and multifocal lenses."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "I've never worn contacts. Can you teach me how to put them in?",
+    "answer": "Yes, every new contact lens wearer gets a training session with our staff to learn how to put in, take out, and care for contacts."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Do you fit contacts for astigmatism?",
+    "answer": "Yes, we fit toric contact lenses for astigmatism."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Do you fit multifocal contacts?",
+    "answer": "Yes, we fit multifocal contacts for people who need help with both distance and reading vision."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Do you fit scleral or specialty lenses?",
+    "answer": "Yes, Dr. Samuel Okafor fits scleral and other specialty lenses for keratoconus and irregular corneas. These need a separate specialty fitting visit."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Can I order contacts through you?",
+    "answer": "Yes, you can order contacts through us and we'll ship them to your home or have them ready for pickup."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "How long does it take to get my contacts?",
+    "answer": "Most contact orders arrive in five to seven business days. Common prescriptions are sometimes in stock for same-day pickup."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Can you ship contacts to my house?",
+    "answer": "Yes, we ship contacts directly to your home. Shipping is free for orders of a six-month supply or more."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Can I use my contact prescription to order online?",
+    "answer": "Yes, it's your prescription. We'll give you a copy so you can order wherever you like."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Why do I need a separate exam for contacts?",
+    "answer": "Contacts sit right on your eye, so we need extra measurements and a check of how the lens fits and moves. A glasses prescription doesn't include that."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "My contact lens prescription expired. Can I still order contacts?",
+    "answer": "We can't order contacts on an expired prescription. You'll need a contact lens exam to renew it, and the front desk can book that for you."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Do you have colored contacts?",
+    "answer": "Yes, we can fit colored contacts, with or without a prescription. Even colored contacts need a fitting to be safe for your eyes."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Can I sleep in my contacts?",
+    "answer": "Most contacts aren't meant for sleeping, and sleeping in them raises your risk of infection. Ask your doctor whether your lenses are approved for overnight wear."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "What do I do if a contact is stuck in my eye?",
+    "answer": "Wash your hands, add a few drops of rewetting drops, and wait a minute before trying again. If you still can't get it out, or your eye is painful or red, call us for a same-day visit."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Do you offer trial contact lenses?",
+    "answer": "Yes, new wearers usually get trial lenses to try for a week or two before ordering a full supply."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Are there rebates on contacts?",
+    "answer": "Yes, many brands offer rebates when you buy a year's supply. We'll tell you about any current rebates when you order."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Can I switch to daily contacts?",
+    "answer": "Yes, many people can switch to daily contacts. Mention it at your contact lens exam and the doctor will help you choose a lens."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "How should I clean my contacts?",
+    "answer": "Use a fresh multipurpose or peroxide solution every day, never water or saliva, and replace your case every three months. Your doctor can recommend a solution for your lenses."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "Can I swim in my contacts?",
+    "answer": "We recommend not swimming in contacts, because water can carry germs that cause serious eye infections. Goggles or prescription goggles are a safer choice."
+  },
+  {
+    "category": "Contact lenses",
+    "question": "What if my contacts feel uncomfortable?",
+    "answer": "Take them out and wear your glasses for the day. If your eye is red, painful, or your vision is blurry, call us for a same-day visit."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell glasses?",
+    "answer": "Yes, our optical shop has hundreds of frames for adults and kids, and our opticians can help you pick a pair that fits well."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "How long does it take to get glasses?",
+    "answer": "Most glasses are ready in seven to ten business days. Progressive lenses and some special lenses can take up to two weeks."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Can I get glasses the same day?",
+    "answer": "For some simple single vision prescriptions we can make glasses the same day or the next day. Ask our opticians when you order."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Can I bring my own frames?",
+    "answer": "Yes, we can put new lenses in your own frames if they're in good shape. There's a 25 dollar fee, and we can't be responsible if an older frame breaks while we work on it."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Can I use a prescription from another doctor to buy glasses?",
+    "answer": "Yes, our optical shop can fill a current glasses prescription from any eye doctor."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you adjust glasses for free?",
+    "answer": "Yes, adjustments and small repairs like replacing nose pads or screws are always free, even if you didn't buy your glasses here."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do glasses come with a warranty?",
+    "answer": "Yes, glasses bought here come with a one year warranty against defects, and a one time replacement if your lenses get scratched in the first year."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "What if I don't like my new glasses?",
+    "answer": "If you're not happy with your glasses within 30 days, we'll remake them or exchange the frames at no charge."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "My new glasses feel weird. Is that normal?",
+    "answer": "It can take a few days to get used to new glasses, especially a new prescription or progressives. If things still feel off after a week, come back and we'll check them for free."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell prescription sunglasses?",
+    "answer": "Yes, we sell prescription sunglasses, including polarized lenses."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell kids' glasses?",
+    "answer": "Yes, we have a large selection of kids' frames, including flexible frames that are hard to break."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell blue light glasses?",
+    "answer": "Yes, we can add a blue light filter to any lenses, with or without a prescription."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell progressive lenses?",
+    "answer": "Yes, we sell progressive lenses, which let you see far away and up close without a visible line."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you have designer frames?",
+    "answer": "Yes, we carry several designer brands along with more affordable frames. Our opticians can show you options in your budget."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Can you repair my broken glasses?",
+    "answer": "We can fix many small problems, like loose hinges or missing screws, while you wait. Bigger breaks may need new frames, and we'll go over your options."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell reading glasses?",
+    "answer": "Yes, we sell over-the-counter reading glasses in the optical shop, and we can also make prescription readers."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you sell safety glasses?",
+    "answer": "Yes, we can make prescription safety glasses for work. Bring any safety requirements from your employer."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Can I pick up my glasses on Saturday?",
+    "answer": "Yes, you can pick up glasses during our Saturday hours, 9 a.m. to 1 p.m."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "How will I know when my glasses are ready?",
+    "answer": "We'll text you as soon as your glasses are ready for pickup."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Can someone else pick up my glasses for me?",
+    "answer": "Yes, someone else can pick up your glasses. Just let us know their name ahead of time. We'll need to fit them on you later if they need adjusting."
+  },
+  {
+    "category": "Glasses and optical shop",
+    "question": "Do you offer lens coatings?",
+    "answer": "Yes, we offer anti-glare, scratch-resistant, blue light, and transition lenses that darken in the sun."
+  },
+  {
+    "category": "Surgery",
+    "question": "Do you do LASIK?",
+    "answer": "Yes, Dr. Marcus Bell does LASIK here at the clinic. The first step is a free consultation to see if you're a good fit."
+  },
+  {
+    "category": "Surgery",
+    "question": "Am I a candidate for LASIK?",
+    "answer": "The best way to know is a free LASIK consultation. Good candidates are usually over 18, have had a stable prescription for at least a year, and have healthy corneas."
+  },
+  {
+    "category": "Surgery",
+    "question": "How long does LASIK take?",
+    "answer": "The LASIK procedure itself takes about 15 minutes for both eyes, though you'll be at the clinic for about two hours on surgery day."
+  },
+  {
+    "category": "Surgery",
+    "question": "Does LASIK hurt?",
+    "answer": "We numb your eyes with drops, so most people feel pressure but not pain during LASIK. Your eyes may feel scratchy for a day or so afterward."
+  },
+  {
+    "category": "Surgery",
+    "question": "How long is recovery after LASIK?",
+    "answer": "Most people see well the next day and go back to work within one to two days. You'll avoid swimming and eye makeup for about a week."
+  },
+  {
+    "category": "Surgery",
+    "question": "Do you do PRK?",
+    "answer": "Yes, we offer PRK for patients who aren't a good fit for LASIK, such as people with thin corneas. Recovery takes a little longer."
+  },
+  {
+    "category": "Surgery",
+    "question": "Do you do cataract surgery?",
+    "answer": "Yes, Dr. Marcus Bell does cataract surgery. It starts with a cataract evaluation to check whether surgery is the right time for you."
+  },
+  {
+    "category": "Surgery",
+    "question": "How do I know if I have cataracts?",
+    "answer": "Common signs are cloudy or blurry vision, glare around lights at night, and colors looking faded. An eye exam can tell for sure."
+  },
+  {
+    "category": "Surgery",
+    "question": "How long does cataract surgery take?",
+    "answer": "Cataract surgery usually takes about 20 minutes per eye. You'll be at the surgery center for two to three hours in total."
+  },
+  {
+    "category": "Surgery",
+    "question": "Where is cataract surgery done?",
+    "answer": "Dr. Bell does cataract surgery at the Magazine Street Surgery Center, two blocks from our clinic. Your checkups before and after are here at the clinic."
+  },
+  {
+    "category": "Surgery",
+    "question": "How long is recovery after cataract surgery?",
+    "answer": "Most people notice better vision within a few days. You'll use eye drops for a few weeks and avoid heavy lifting and rubbing your eye for about a week."
+  },
+  {
+    "category": "Surgery",
+    "question": "Do I need someone to drive me after surgery?",
+    "answer": "Yes, you'll need an adult to drive you home after LASIK, PRK, or cataract surgery."
+  },
+  {
+    "category": "Surgery",
+    "question": "Will I still need glasses after cataract surgery?",
+    "answer": "Many people still need reading glasses after cataract surgery. Premium lens options can reduce how much you need glasses, and Dr. Bell will go over them with you."
+  },
+  {
+    "category": "Surgery",
+    "question": "Can both eyes be done on the same day?",
+    "answer": "LASIK is usually done on both eyes on the same day. Cataract surgery is usually done one eye at a time, a week or two apart."
+  },
+  {
+    "category": "Surgery",
+    "question": "How do I prepare for surgery?",
+    "answer": "We'll give you written instructions before your surgery. Usually you'll stop wearing contacts for a while beforehand, skip eye makeup, and arrange a ride home."
+  },
+  {
+    "category": "Surgery",
+    "question": "Do I need to stop wearing contacts before LASIK?",
+    "answer": "Yes. You'll need to stop wearing soft contacts for about one to two weeks before your LASIK consultation and surgery, and longer for hard lenses."
+  },
+  {
+    "category": "Surgery",
+    "question": "Can I get LASIK if I have astigmatism?",
+    "answer": "Often yes. LASIK can correct many cases of astigmatism. Your consultation will tell you whether it's right for your eyes."
+  },
+  {
+    "category": "Surgery",
+    "question": "Do you offer financing for LASIK?",
+    "answer": "Yes, many patients pay for LASIK through CareCredit, and we also offer in-house monthly payment plans."
+  },
+  {
+    "category": "Surgery",
+    "question": "Is there a guarantee with LASIK?",
+    "answer": "If your vision changes in the first year, any touch-up treatment you need is included in your LASIK price."
+  },
+  {
+    "category": "Surgery",
+    "question": "What are the risks of LASIK?",
+    "answer": "Like any surgery, LASIK has some risks, including dry eyes, glare or halos at night, and rarely a need for a touch-up. Dr. Bell will go over the risks for your eyes at your consultation."
+  },
+  {
+    "category": "Children",
+    "question": "Do you see children?",
+    "answer": "Yes, we see children starting at age three. Dr. Priya Nair focuses on children's eye care."
+  },
+  {
+    "category": "Children",
+    "question": "At what age should my child have their first eye exam?",
+    "answer": "We recommend a first eye exam around age three, another before starting school, and then every year or two after that."
+  },
+  {
+    "category": "Children",
+    "question": "Can you check my child for a lazy eye?",
+    "answer": "Yes, Dr. Priya Nair checks for lazy eye and crossed eyes as part of every children's exam."
+  },
+  {
+    "category": "Children",
+    "question": "Will my child's eyes be dilated?",
+    "answer": "Most children's exams include dilating drops, which help us measure their prescription accurately. The drops can sting for a moment, and we'll help your child through it."
+  },
+  {
+    "category": "Children",
+    "question": "How long does a children's eye exam take?",
+    "answer": "A children's eye exam usually takes 45 minutes to an hour, including time for dilating drops to work."
+  },
+  {
+    "category": "Children",
+    "question": "Can my child get contacts?",
+    "answer": "Many kids can wear contacts once they're mature enough to take care of them, often around age 10 to 12. Dr. Nair can talk with you about whether your child is ready."
+  },
+  {
+    "category": "Children",
+    "question": "My child failed a vision screening at school. What should I do?",
+    "answer": "Please book a full eye exam with us. School screenings can catch problems but can't measure a prescription or check eye health."
+  },
+  {
+    "category": "Children",
+    "question": "Do you treat myopia in kids?",
+    "answer": "Yes, we offer myopia control for kids, such as special contact lenses and eye drops that can slow down how fast nearsightedness gets worse."
+  },
+  {
+    "category": "Children",
+    "question": "How can I tell if my child needs glasses?",
+    "answer": "Signs include squinting, sitting very close to the TV, rubbing their eyes a lot, headaches, or trouble reading. A children's eye exam is the best way to know."
+  },
+  {
+    "category": "Children",
+    "question": "Are kids' glasses covered by insurance?",
+    "answer": "It depends on your plan. Many medical plans don't cover glasses, so check with your insurance. Our kids' frames start at 69 dollars."
+  },
+  {
+    "category": "Children",
+    "question": "Can I stay with my child during the exam?",
+    "answer": "Yes, a parent or guardian should stay with your child during the whole exam."
+  },
+  {
+    "category": "Children",
+    "question": "Do you do vision therapy?",
+    "answer": "We don't offer vision therapy here, but we can refer you to a trusted vision therapy provider nearby."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "What should I do if I have an eye emergency?",
+    "answer": "If you have sudden vision loss, a serious eye injury, or a chemical in your eye, call 911 or go to the nearest emergency room right away. For other urgent problems, call us during business hours for a same-day visit."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "I got a chemical in my eye. What should I do?",
+    "answer": "Rinse your eye with clean water right away for at least 15 minutes, then call 911 or go to the nearest emergency room."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "I suddenly lost vision in one eye. What should I do?",
+    "answer": "Sudden vision loss is an emergency. Please call 911 or go to the nearest emergency room right away."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "I'm seeing flashes of light and new floaters. What should I do?",
+    "answer": "New flashes or a sudden shower of floaters can be a sign of a retinal tear and should be checked the same day. During business hours, call us for an urgent visit. After hours, go to the emergency room."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "Do you have an after-hours number?",
+    "answer": "Yes, after hours you can call our main number and choose the option for the on-call doctor. For emergencies like sudden vision loss or serious injuries, call 911."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "I have something in my eye. Can you see me today?",
+    "answer": "Yes, we keep same-day slots for problems like something stuck in your eye. Don't rub it. Rinse with clean water, and call us as early as you can so we can fit you in."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "I scratched my eye. Can you help?",
+    "answer": "Yes, a scratched eye should be seen soon. Call us for a same-day visit. If the pain is severe or your vision is very blurry, go to the emergency room."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "Do you treat pink eye?",
+    "answer": "Yes, we treat pink eye and other eye infections, usually with a same-day visit."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "My eye is red and painful. What should I do?",
+    "answer": "A red, painful eye should be checked soon. Call us for a same-day visit. If you also have sudden vision changes or severe pain, go to the emergency room."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "Is pink eye contagious?",
+    "answer": "Some types of pink eye are very contagious. Wash your hands often, don't share towels, and book a visit so we can find out what type you have and how to treat it."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "I got hit in the eye. Should I be seen?",
+    "answer": "Yes. A hit to the eye should be checked, even if it feels okay. If you have vision loss, bleeding in the eye, or severe pain, go to the emergency room. Otherwise, call us for a same-day visit."
+  },
+  {
+    "category": "Urgent and emergency care",
+    "question": "Should I go to the ER or come to you?",
+    "answer": "Go to the ER for sudden vision loss, chemical injuries, serious trauma, or severe pain. For red eyes, mild injuries, or infections, call us first for a same-day visit."
+  },
+  {
+    "category": "Eye health",
+    "question": "Can you treat dry eyes?",
+    "answer": "Yes, we treat dry eye with options like prescription drops, in-office treatments, and simple changes at home. Book a dry eye visit to find what works for you."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you treat glaucoma?",
+    "answer": "Yes, our doctors diagnose and manage glaucoma, including regular monitoring and eye drops. Dr. Bell also does glaucoma procedures when needed."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you treat macular degeneration?",
+    "answer": "We diagnose and monitor macular degeneration, and we work with retina specialists nearby for injection treatments when needed."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you treat keratoconus?",
+    "answer": "Yes, we diagnose keratoconus and fit specialty lenses for it. For corneal cross-linking, we refer to a cornea specialist."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you treat styes?",
+    "answer": "Yes, we treat styes and other eyelid bumps. Warm compresses help many styes, but if one is painful or isn't going away, book a visit."
+  },
+  {
+    "category": "Eye health",
+    "question": "Can screens damage my eyes?",
+    "answer": "Screens don't usually damage your eyes, but they can cause eye strain and dryness. Try the 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds."
+  },
+  {
+    "category": "Eye health",
+    "question": "Are floaters normal?",
+    "answer": "A few floaters that have been there a long time are common. A sudden increase in floaters, or flashes of light, should be checked the same day."
+  },
+  {
+    "category": "Eye health",
+    "question": "Can you refill my eye drop prescription?",
+    "answer": "Yes, if you're an established patient we can usually refill your eye drops. Send a request through the patient portal or ask the front desk, and allow two business days."
+  },
+  {
+    "category": "Eye health",
+    "question": "Can you send a prescription to my pharmacy?",
+    "answer": "Yes, we can send eye drop and medication prescriptions to any pharmacy you choose."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you do eyelid surgery?",
+    "answer": "We don't do cosmetic eyelid surgery here, but we can refer you to an oculoplastic surgeon."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you treat eye allergies?",
+    "answer": "Yes, we treat eye allergies with prescription and over-the-counter drops. Book a visit if over-the-counter drops aren't helping."
+  },
+  {
+    "category": "Eye health",
+    "question": "Does diabetes affect my eyes?",
+    "answer": "Yes, diabetes can damage the blood vessels in the back of your eye. That's why we recommend a dilated eye exam every year if you have diabetes."
+  },
+  {
+    "category": "Eye health",
+    "question": "Do you do low vision services?",
+    "answer": "We offer basic low vision help, like magnifiers and lighting advice, and can refer you to a low vision specialist for more support."
+  },
+  {
+    "category": "Eye health",
+    "question": "Can you tell me if my symptoms are serious?",
+    "answer": "I can't give medical advice over the phone. If you have sudden vision loss or a serious injury, call 911. Otherwise, our front desk can book a visit or connect you with a nurse."
+  },
+  {
+    "category": "Eye health",
+    "question": "Can I speak to a nurse?",
+    "answer": "Yes, our front desk can take a message for our nurse, who usually calls back the same business day."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "How do I sign up for the patient portal?",
+    "answer": "We'll text you a sign-up link after your first visit. You can also ask the front desk to send you a new link at any time."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "I forgot my patient portal password. What do I do?",
+    "answer": "Use the forgot password link on the portal's sign-in page. If that doesn't work, the front desk can send you a new sign-up link."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "What can I do in the patient portal?",
+    "answer": "In the portal you can book and cancel appointments, see your prescriptions, pay bills, fill out forms before your visit, and message our team."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "How do I get my medical records?",
+    "answer": "You can request your records through the patient portal or by filling out a records request form at the front desk. Requests are usually ready within five business days."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "Can you send my records to another doctor?",
+    "answer": "Yes, we can send your records to another doctor at no charge. We'll need a signed release form, which you can fill out in the portal or at the front desk."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "How do I transfer my records to your clinic?",
+    "answer": "Ask your previous eye doctor to send your records to us. Our front desk can give you our fax number and a release form if they need one."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "Can I fill out my new patient forms online?",
+    "answer": "Yes, you can fill out new patient forms in the patient portal before your visit. It saves about 15 minutes at check-in."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "Can I message my doctor?",
+    "answer": "Yes, you can send a message through the patient portal. Our team usually replies within one business day."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "How do I update my address or phone number?",
+    "answer": "You can update your contact information in the patient portal, or tell the front desk at your next visit."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "Can I see my test results online?",
+    "answer": "Yes, most test results show up in the patient portal once your doctor has reviewed them."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "How do I add my child to my portal account?",
+    "answer": "The front desk can link your child's record to your portal account so you can manage their appointments too."
+  },
+  {
+    "category": "Patient portal and records",
+    "question": "Is my information kept private?",
+    "answer": "Yes, we keep your health information private and follow HIPAA. We only share it with people you've approved or as the law requires."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "What should I bring to my first visit?",
+    "answer": "Please bring a photo ID, your insurance card, your current glasses and contacts, a list of your medications, and sunglasses in case your eyes are dilated."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "How early should I arrive?",
+    "answer": "Please arrive 15 minutes early for your first visit, or 10 minutes early for other visits, to check in."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "Do I need to wear a mask?",
+    "answer": "Masks are optional in our clinic. We have masks at the front desk if you'd like one."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "Can I bring my service animal?",
+    "answer": "Yes, service animals are always welcome."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "Do you have interpreters?",
+    "answer": "Yes, we have Spanish-speaking staff, and we can provide a phone or video interpreter for other languages at no cost. Let us know when you book."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "Do you speak Spanish?",
+    "answer": "Yes, several of our staff speak Spanish. Let us know when you book and we'll make sure someone is available."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "Can a family member make appointments for me?",
+    "answer": "Yes, a family member can book appointments for you. To share medical details with them, we'll need your written permission on file."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "Can I get a doctor's note for work or school?",
+    "answer": "Yes, we can give you a note for work or school after your visit at no charge."
+  },
+  {
+    "category": "Visits and policies",
+    "question": "How do I leave feedback or make a complaint?",
+    "answer": "We'd love to hear from you. You can leave feedback through the patient portal, or ask to speak with our office manager."
+  }
+]

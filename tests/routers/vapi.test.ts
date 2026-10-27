@@ -12,7 +12,7 @@ const toolCallsBody = {
   message: {
     type: 'tool-calls',
     toolCallList: [{ id: 'call-1', type: 'function', function: { name: 'check_insurance', arguments: {} } }],
-    call: { id: 'ignored' },
+    call: { id: 'vapi-call-1' },
   },
 }
 
@@ -75,7 +75,7 @@ describe('POST /vapi/tools', () => {
     expect(await response.json()).toEqual({ results })
     expect(vapiToolController.handleToolCalls).toHaveBeenCalledWith(
       [{ id: 'call-1', function: { name: 'check_insurance', arguments: {} } }],
-      expect.objectContaining({ requestId: expect.any(String) }),
+      { requestId: expect.any(String), callId: 'vapi-call-1' },
     )
   })
 

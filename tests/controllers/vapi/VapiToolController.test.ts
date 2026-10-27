@@ -15,7 +15,8 @@ const result: EligibilityCheckResult = {
 describe('VapiToolController', () => {
   const ctx = { requestId: 'test-request' }
   const eligibility = { checkByCallerName: jest.fn() }
-  const controller = new VapiToolController(eligibility)
+  const faqs = { answer: jest.fn() }
+  const controller = new VapiToolController(eligibility, faqs)
 
   beforeEach(() => {
     jest.resetAllMocks()
@@ -85,5 +86,57 @@ describe('VapiToolController', () => {
     )
 
     expect(results.map((r) => r.toolCallId)).toEqual(['a', 'b'])
+  })
+
+  describe('answer_question', () => {
+    const explanation = {
+      outcome: 'answered',
+      say: 'We are open 8 to 5.',
+      faq_id: 'hours',
+      options: [],
+      decided_by: 'similarity',
+      reason: null,
+      matches: [{ faq_id: 'hours', question: 'What are your hours?', category: null, similarity: 0.9 }],
+      thresholds: { answerAt: 0.75, considerFrom: 0.5, margin: 0.05 },
+    }
+
+    it('answers from the FAQ list, recording the question, and returns only what the agent needs', async () => {
+      faqs.answer.mockResolvedValue(explanation)
+
+      const results = await controller.handleToolCalls(
+        [{ id: 'call-1', function: { name: 'answer_question', arguments: { question: 'when are you open' } } }],
+        ctx,
+      )
+
+      expect(faqs.answer).toHaveBeenCalledWith({ question: 'when are you open' }, { record: true }, ctx)
+      expect(JSON.parse(results[0].result!)).toEqual({
+        outcome: 'answered',
+        say: 'We are open 8 to 5.',
+        faq_id: 'hours',
+        options: [],
+      })
+    })
+
+    it('asks for the question when it is missing', async () => {
+      const results = await controller.handleToolCalls(
+        [{ id: 'call-1', function: { name: 'answer_question', arguments: { question: '  ' } } }],
+        ctx,
+      )
+
+      expect(faqs.answer).not.toHaveBeenCalled()
+      expect(results[0].error).toContain("Missing the caller's question")
+    })
+
+    it('tells the agent not to answer from its own knowledge when the lookup fails', async () => {
+      faqs.answer.mockRejectedValue(new Error('OpenAI down'))
+
+      const results = await controller.handleToolCalls(
+        [{ id: 'call-1', function: { name: 'answer_question', arguments: { question: 'when are you open' } } }],
+        ctx,
+      )
+
+      expect(results[0].error).toContain('Do not answer it from your own knowledge')
+      expect(results[0].error).not.toContain('OpenAI')
+    })
   })
 })
