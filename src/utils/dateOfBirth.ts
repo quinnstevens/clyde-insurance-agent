@@ -89,6 +89,12 @@ const TENS: Record<string, number> = {
   thirtieth: 30,
 }
 
+/** Cardinal digit words only: "second" is a day, never part of a spoken year. */
+const DIGITS: Record<string, string> = Object.fromEntries(
+  ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'].map((w, i) => [w, String(i)]),
+)
+DIGITS.oh = '0'
+
 const isNumberWord = (w: string) => w in UNITS || w in TEENS || w in TENS || w === 'hundred' || w === 'thousand'
 
 /**
@@ -101,6 +107,14 @@ const spokenRunToDigits = (words: string[]): string[] => {
   for (let i = 0; i < words.length; i++) {
     const w = words[i]
     const next = words[i + 1]
+    // A year said digit by digit, "one nine nine one" or "two zero zero five". Checked first so the
+    // "oh five" rule below doesn't split it.
+    const year = words.slice(i, i + 4).map((d) => DIGITS[d])
+    if (year.length === 4 && year.every((d) => d !== undefined) && /^(19|20)/.test(year.join(''))) {
+      chunks.push({ value: Number(year.join('')), text: year.join('') })
+      i += 3
+      continue
+    }
     // "thirty one" is 31, but "thirtieth" is complete: "thirtieth two thousand" is the 30th, then 2000.
     if (w in TENS && !w.endsWith('ieth') && next !== undefined && next in UNITS && UNITS[next] > 0) {
       const value = TENS[w] + UNITS[next]
