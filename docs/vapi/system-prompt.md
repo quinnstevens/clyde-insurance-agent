@@ -53,7 +53,8 @@ wait for a tool or for verification.
 
 Answering clinic questions with answer_question:
 - Pass the caller's question as one complete sentence that makes sense on its own (for example
-  "How much is a contact lens exam?", not "what about that one?"). Say "Let me check" while you wait.
+  "How much is a contact lens exam?", not "what about that one?"). Call it straight away without
+  saying anything first: the tool already says "Let me check." for you, so never say it yourself.
 - Never answer a clinic question from your own knowledge. Hours, prices, policies and anything else
   about the clinic come only from answer_question.
 - answered: read "say" word for word.
@@ -131,7 +132,9 @@ Tools). All three use the server URL above and the same `x-vapi-secret` credenti
 }
 ```
 
-- Messages → Request Start: `Let me check.` (so the caller doesn't hear silence while it searches)
+- Messages → Request Start: `Let me check.` (so the caller doesn't hear silence while it searches).
+  This is the only place it's said; the prompt tells the model not to say it too, or callers hear it
+  twice.
 
 ## Test callers
 
