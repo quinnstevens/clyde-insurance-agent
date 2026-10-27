@@ -11,17 +11,19 @@ Phrase.
 - `answer_question(question)`: answers from the clinic's FAQ list.
 
 First message (Vapi → Assistant → First Message):
-`Thanks for calling Clyde Eye Clinic. Can I get your first name and date of birth?`
+`Thanks for calling Clyde Eye Clinic. Can I get your first name?`
 
 ```text
 You are the phone assistant for an eye clinic. You help patients with their insurance and answer
 their questions about the clinic.
 
 1. Verify the caller first.
-   - Get their first name and date of birth. Ask for whichever is missing, one at a time.
-   - Call verify_caller with caller_name and date_of_birth, written the way they said it (for
-     example "02/02/1991" or "February 2, 1991"). If the year or day is unclear, ask them to repeat
-     it rather than guessing.
+   - Get their first name first. Then say "Thanks, <name>. And what's your date of birth?"
+     Don't call any tool until you have both.
+   - Call verify_caller with caller_name and date_of_birth. Write the date the way they said it,
+     as digits if you can ("February second, nineteen ninety-one" is "02/02/1991"). Don't ask them
+     to repeat the date yourself; the server reads spoken dates. Only ask again if verify_caller
+     says it couldn't read it.
    - verified: read "say", which asks how you can help, and then stop and wait. Do not check their
      insurance or call any other tool until the caller tells you what they need. From now on, call
      them by "name".
@@ -97,7 +99,7 @@ Tools). All three use the server URL above and the same `x-vapi-secret` credenti
   "type": "object",
   "properties": {
     "caller_name": { "type": "string", "description": "The caller's first name, as they said it." },
-    "date_of_birth": { "type": "string", "description": "The caller's date of birth as they said it, e.g. 02/02/1991 or February 2, 1991. Month first." }
+    "date_of_birth": { "type": "string", "description": "The caller's date of birth, as MM/DD/YYYY digits if you can (February second nineteen ninety-one is 02/02/1991), otherwise exactly as they said it." }
   },
   "required": ["caller_name", "date_of_birth"]
 }

@@ -22,6 +22,19 @@ describe('normalizeDateOfBirth', () => {
     '2 February 1991',
     '2nd Feb 1991',
     '  02/02/1991  ',
+    // The way people say it, and the way a voice model writes that down.
+    'February 2nd, 1991.',
+    '02/02/1991.',
+    "Feb 2, '91",
+    'February second, nineteen ninety-one',
+    'february second nineteen ninety one',
+    'the second of February 1991',
+    '2nd of February, 1991',
+    'the second of February, nineteen ninety-one',
+    'oh two oh two nineteen ninety one',
+    'oh two, oh two, ninety one',
+    'two two ninety one',
+    'my birthday is February 2nd, 1991',
   ])('reads %p as 1991-02-02', (raw) => {
     expect(read(raw)).toBe('1991-02-02')
   })
@@ -44,6 +57,18 @@ describe('normalizeDateOfBirth', () => {
       expect(read(raw)).toBeNull()
     },
   )
+
+  it.each([
+    ['January first, nineteen seventy-one', '1971-01-01'],
+    ['May fifth nineteen seventy five', '1975-05-05'],
+    ['December twenty-second, two thousand five', '2005-12-22'],
+    ['March thirtieth two thousand and twelve', '2012-03-30'],
+    ['July 4th twenty twelve', '2012-07-04'],
+    ['August ninth, nineteen oh five', '1905-08-09'],
+    ['the thirty-first of October 1988', '1988-10-31'],
+  ])('reads %p as %p', (raw, expected) => {
+    expect(read(raw)).toBe(expected)
+  })
 
   it('accepts a real leap day', () => {
     expect(read('2/29/1992')).toBe('1992-02-29')
