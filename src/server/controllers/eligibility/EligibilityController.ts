@@ -5,7 +5,14 @@ import { AppError } from '@clyde-api/types/errors'
 import logger from '@clyde-api/utils/logger'
 import { stediClient, type StediClient } from '@clyde-api/utils/stedi'
 import { messages } from './messages'
-import type { CheckInsuranceParams, EligibilityCheckResult, EligibilityOutcome } from './schemas'
+import type {
+  CallerIdentity,
+  CheckInsuranceParams,
+  EligibilityCheckResult,
+  EligibilityOutcome,
+  VerifyCallerParams,
+  VerifyCallerResult,
+} from './schemas'
 import { summarizeEligibility, type EligibilitySummary } from './summarizeEligibility'
 
 type CallerMatch = { kind: 'found'; patient: Patient } | { kind: 'unknown' } | { kind: 'ambiguous' }
@@ -32,7 +39,8 @@ const emptyResult = (outcome: EligibilityOutcome, say: string): EligibilityCheck
 })
 
 /**
- * Answers "is my insurance accepted here, and what will I pay?" for a caller identified by name.
+ * Identifies callers by name and date of birth, and answers "is my insurance accepted here, and what
+ * will I pay?" for them.
  *
  * Every expected failure (unknown name, payer rejection, Stedi down) comes back as an `outcome` with a
  * sentence to say rather than a thrown error: the voice agent always needs something true to tell
@@ -41,8 +49,23 @@ const emptyResult = (outcome: EligibilityOutcome, say: string): EligibilityCheck
 export class EligibilityController {
   constructor(private readonly stedi: Pick<StediClient, 'checkEligibility'> = stediClient) {}
 
+  /** The agent's first step: is this caller a patient? Shares nothing about them beyond their name. */
+  async verifyCaller(params: VerifyCallerParams, ctx: RequestContext): Promise<VerifyCallerResult> {
+    const match = await this.findCaller(params)
+
+    if (match.kind === 'found') {
+      const name = match.patient.preferred_name ?? match.patient.first_name
+      logger.info('[EligibilityController] caller verified', { requestId: ctx.requestId, patientId: match.patient.id })
+      return { outcome: 'verified', patient_id: match.patient.id, name, say: messages.verified(name) }
+    }
+    logger.info('[EligibilityController] caller not verified', { requestId: ctx.requestId, match: match.kind })
+    return match.kind === 'ambiguous'
+      ? { outcome: 'ambiguous', patient_id: null, name: null, say: messages.ambiguousCaller() }
+      : { outcome: 'not_found', patient_id: null, name: null, say: messages.unknownCaller() }
+  }
+
   async checkByCallerName(params: CheckInsuranceParams, ctx: RequestContext): Promise<EligibilityCheckResult> {
-    const match = await this.findCaller(params.caller_name)
+    const match = await this.findCaller(params)
 
     if (match.kind === 'unknown') {
       logger.info('[EligibilityController] caller not found', { requestId: ctx.requestId })
@@ -124,16 +147,20 @@ export class EligibilityController {
   }
 
   /**
-   * Match on `preferred_name`, case-insensitively. Try the whole name first ("Mary Ann"), then just the
-   * first word, so "James Jones" still finds James.
+   * Match on `preferred_name`, case-insensitively, and the exact date of birth. Try the whole name
+   * first ("Mary Ann"), then just the first word, so "James Jones" still finds James. The date of
+   * birth also tells apart two patients with the same first name.
    */
-  private async findCaller(rawName: string): Promise<CallerMatch> {
-    const fullName = normalizeName(rawName)
+  private async findCaller({ caller_name, date_of_birth }: CallerIdentity): Promise<CallerMatch> {
+    const fullName = normalizeName(caller_name)
     const firstWord = fullName.split(' ')[0]
     const keys = [...new Set([fullName, firstWord])].filter((key) => key.length > 0)
 
     for (const key of keys) {
-      const patients = await Patient.query().where('preferred_name', 'ilike', key).limit(2)
+      const patients = await Patient.query()
+        .where('preferred_name', 'ilike', key)
+        .where('date_of_birth', date_of_birth)
+        .limit(2)
       if (patients.length === 1) return { kind: 'found', patient: patients[0] }
       if (patients.length > 1) return { kind: 'ambiguous' }
     }

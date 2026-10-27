@@ -73,7 +73,7 @@ describe('EligibilityController', () => {
       mockPatientQueries([patients.james])
       respondWith('james')
 
-      const result = await controller.checkByCallerName({ caller_name: 'James' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
 
       expect(stedi.checkEligibility).toHaveBeenCalledWith(
         {
@@ -105,7 +105,7 @@ describe('EligibilityController', () => {
       mockPatientQueries([patients.jane])
       respondWith('jane')
 
-      const result = await controller.checkByCallerName({ caller_name: 'Jane' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'Jane', date_of_birth: '1975-05-05' }, ctx)
 
       expect(stedi.checkEligibility).toHaveBeenCalledTimes(1)
       expect(result).toMatchObject({
@@ -122,7 +122,7 @@ describe('EligibilityController', () => {
       mockPatientQueries([patients.morgan])
       respondWith('morgan')
 
-      const result = await controller.checkByCallerName({ caller_name: 'Morgan' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'Morgan', date_of_birth: '1971-01-01' }, ctx)
 
       expect(stedi.checkEligibility).toHaveBeenCalledWith(
         expect.objectContaining({ firstName: 'Jane', lastName: 'Doe', memberId: 'UHCINACTIVE', payerId: '87726' }),
@@ -144,16 +144,20 @@ describe('EligibilityController', () => {
       const [builder] = mockPatientQueries([patients.james])
       respondWith('james')
 
-      await controller.checkByCallerName({ caller_name: 'james' }, ctx)
+      await controller.checkByCallerName({ caller_name: 'james', date_of_birth: '1991-02-02' }, ctx)
 
       expect(builder.where).toHaveBeenCalledWith('preferred_name', 'ilike', 'james')
+      expect(builder.where).toHaveBeenCalledWith('date_of_birth', '1991-02-02')
     })
 
     it('falls back to the first word when the caller gives a full name', async () => {
       const [fullName, firstWord] = mockPatientQueries([], [patients.james])
       respondWith('james')
 
-      const result = await controller.checkByCallerName({ caller_name: 'James Jones' }, ctx)
+      const result = await controller.checkByCallerName(
+        { caller_name: 'James Jones', date_of_birth: '1991-02-02' },
+        ctx,
+      )
 
       expect(fullName.where).toHaveBeenCalledWith('preferred_name', 'ilike', 'James Jones')
       expect(firstWord.where).toHaveBeenCalledWith('preferred_name', 'ilike', 'James')
@@ -164,7 +168,7 @@ describe('EligibilityController', () => {
       const [builder] = mockPatientQueries([patients.james])
       respondWith('james')
 
-      await controller.checkByCallerName({ caller_name: 'Ja%m_es.' }, ctx)
+      await controller.checkByCallerName({ caller_name: 'Ja%m_es.', date_of_birth: '1991-02-02' }, ctx)
 
       expect(builder.where).toHaveBeenCalledWith('preferred_name', 'ilike', 'James')
     })
@@ -172,7 +176,7 @@ describe('EligibilityController', () => {
     it('returns unknown_caller without calling Stedi for a name it does not know', async () => {
       mockPatientQueries([])
 
-      const result = await controller.checkByCallerName({ caller_name: 'Bob' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'Bob', date_of_birth: '1980-01-01' }, ctx)
 
       expect(stedi.checkEligibility).not.toHaveBeenCalled()
       expect(result).toMatchObject({ outcome: 'unknown_caller', patient_id: null, coverage: null })
@@ -180,7 +184,7 @@ describe('EligibilityController', () => {
     })
 
     it('returns unknown_caller when nothing usable is left of the name', async () => {
-      const result = await controller.checkByCallerName({ caller_name: '123 ...' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: '123 ...', date_of_birth: '1980-01-01' }, ctx)
 
       expect(Patient.query).not.toHaveBeenCalled()
       expect(result.outcome).toBe('unknown_caller')
@@ -189,7 +193,7 @@ describe('EligibilityController', () => {
     it('refuses to guess when a name matches more than one patient', async () => {
       mockPatientQueries([patients.james, { ...patients.james, id: 'other' }])
 
-      const result = await controller.checkByCallerName({ caller_name: 'James' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
 
       expect(stedi.checkEligibility).not.toHaveBeenCalled()
       expect(result.outcome).toBe('ambiguous_caller')
@@ -198,7 +202,7 @@ describe('EligibilityController', () => {
     it('returns no_insurance_on_file when the patient has no member id', async () => {
       mockPatientQueries([{ ...patients.james, insurance_member_id: null }])
 
-      const result = await controller.checkByCallerName({ caller_name: 'James' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
 
       expect(stedi.checkEligibility).not.toHaveBeenCalled()
       expect(result).toMatchObject({ outcome: 'no_insurance_on_file', patient_id: patients.james.id })
@@ -210,7 +214,7 @@ describe('EligibilityController', () => {
       mockPatientQueries([patients.james])
       stedi.checkEligibility.mockRejectedValue(AppError.timeout('Stedi eligibility check timed out'))
 
-      const result = await controller.checkByCallerName({ caller_name: 'James' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
 
       expect(result).toMatchObject({ outcome: 'check_failed', coverage: 'unknown', cost_share: null })
       expect(result.say).toContain("wasn't able to confirm")
@@ -224,7 +228,7 @@ describe('EligibilityController', () => {
         errors: [{ code: '75', description: 'Subscriber/Insured Not Found' }],
       })
 
-      const result = await controller.checkByCallerName({ caller_name: 'James' }, ctx)
+      const result = await controller.checkByCallerName({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
 
       expect(result.outcome).toBe('check_failed')
     })
@@ -233,7 +237,45 @@ describe('EligibilityController', () => {
       mockPatientQueries([patients.james])
       stedi.checkEligibility.mockRejectedValue(new TypeError('bug'))
 
-      await expect(controller.checkByCallerName({ caller_name: 'James' }, ctx)).rejects.toThrow('bug')
+      await expect(
+        controller.checkByCallerName({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx),
+      ).rejects.toThrow('bug')
+    })
+  })
+
+  describe('verifyCaller', () => {
+    it('verifies a caller whose name and date of birth match, and asks how it can help', async () => {
+      const [builder] = mockPatientQueries([patients.morgan])
+
+      const result = await controller.verifyCaller({ caller_name: 'Morgan', date_of_birth: '1971-01-01' }, ctx)
+
+      expect(builder.where).toHaveBeenCalledWith('date_of_birth', '1971-01-01')
+      expect(result).toEqual({
+        outcome: 'verified',
+        patient_id: patients.morgan.id,
+        name: 'Morgan',
+        say: 'Thanks, Morgan, I found your record. How can I help you today?',
+      })
+      expect(stedi.checkEligibility).not.toHaveBeenCalled()
+    })
+
+    it('gives the same answer for a wrong date of birth as for an unknown name', async () => {
+      mockPatientQueries([])
+      const wrongBirthday = await controller.verifyCaller({ caller_name: 'James', date_of_birth: '1990-01-01' }, ctx)
+      mockPatientQueries([])
+      const unknownName = await controller.verifyCaller({ caller_name: 'Bob', date_of_birth: '1980-01-01' }, ctx)
+
+      expect(wrongBirthday).toEqual(unknownName)
+      expect(wrongBirthday).toMatchObject({ outcome: 'not_found', patient_id: null, name: null })
+      expect(wrongBirthday.say).toContain('name and date of birth')
+    })
+
+    it('refuses to pick when two patients share a name and date of birth', async () => {
+      mockPatientQueries([patients.james, { ...patients.james, id: 'other' }])
+
+      const result = await controller.verifyCaller({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
+
+      expect(result.outcome).toBe('ambiguous')
     })
   })
 })

@@ -1,15 +1,40 @@
 import { z } from 'zod'
 
-/** Arguments for the `check_insurance` tool (and POST /eligibility/check). */
-export const CheckInsuranceParamsSchema = z.object({
+/**
+ * Who the caller says they are. Name alone isn't enough to share anything about a patient, so every
+ * lookup also needs the date of birth on file.
+ */
+export const CallerIdentitySchema = z.object({
   caller_name: z
     .string({ error: 'caller_name is required' })
     .trim()
     .min(1, 'caller_name is required')
     .max(100, 'caller_name must be at most 100 characters'),
+  date_of_birth: z.iso.date({ error: 'date_of_birth must be a date in YYYY-MM-DD format' }),
 })
 
-export type CheckInsuranceParams = z.infer<typeof CheckInsuranceParamsSchema>
+export type CallerIdentity = z.infer<typeof CallerIdentitySchema>
+
+/** Arguments for the `verify_caller` tool. */
+export const VerifyCallerParamsSchema = CallerIdentitySchema
+export type VerifyCallerParams = CallerIdentity
+
+/**
+ * Arguments for the `check_insurance` tool (and POST /eligibility/check). It re-checks the date of
+ * birth itself rather than trusting that `verify_caller` ran first.
+ */
+export const CheckInsuranceParamsSchema = CallerIdentitySchema
+export type CheckInsuranceParams = CallerIdentity
+
+/** What `verify_caller` returns. Unknown name and wrong date of birth look the same on purpose. */
+export const VerifyCallerResultSchema = z.object({
+  outcome: z.enum(['verified', 'not_found', 'ambiguous']),
+  patient_id: z.string().nullable(),
+  /** The name to call them by, once verified. */
+  name: z.string().nullable(),
+  say: z.string(),
+})
+export type VerifyCallerResult = z.infer<typeof VerifyCallerResultSchema>
 
 /**
  * Every way a check can end. The agent branches on this; `say` carries the exact wording so the

@@ -2,7 +2,7 @@ import {
   eligibilityController,
   type EligibilityController,
 } from '@clyde-api/server/controllers/eligibility/EligibilityController'
-import { CheckInsuranceParamsSchema } from '@clyde-api/server/controllers/eligibility/schemas'
+import { CheckInsuranceParamsSchema, VerifyCallerParamsSchema } from '@clyde-api/server/controllers/eligibility/schemas'
 import { faqAnswerController, type FaqAnswerController } from '@clyde-api/server/controllers/faq/FaqAnswerController'
 import { AnswerQuestionParamsSchema } from '@clyde-api/server/controllers/faq/schemas'
 import type { RequestContext } from '@clyde-api/types/context'
@@ -13,6 +13,14 @@ import type { VapiToolCall, VapiToolResult } from './schemas'
 const TOOL_FAILURE_INSTRUCTION =
   "The insurance check could not be completed. Tell the caller you weren't able to confirm their coverage right now, " +
   'and that the front desk will follow up. Do not guess at coverage or costs.'
+
+const VERIFY_FAILURE_INSTRUCTION =
+  "The caller's record could not be looked up. Tell the caller you can't pull up their record right now. You can " +
+  "still answer general questions about the clinic, but don't share anything about their account."
+
+const MISSING_IDENTITY_INSTRUCTION =
+  "Missing the caller's first name or date of birth. Ask for whichever is missing, then try again with the date " +
+  'of birth as YYYY-MM-DD.'
 
 const FAQ_FAILURE_INSTRUCTION =
   "The question could not be looked up. Tell the caller you can't answer that right now and that the front desk can " +
@@ -33,7 +41,10 @@ const parseArguments = (raw: VapiToolCall['function']['arguments']): unknown => 
  */
 export class VapiToolController {
   constructor(
-    private readonly eligibility: Pick<EligibilityController, 'checkByCallerName'> = eligibilityController,
+    private readonly eligibility: Pick<
+      EligibilityController,
+      'checkByCallerName' | 'verifyCaller'
+    > = eligibilityController,
     private readonly faqs: Pick<FaqAnswerController, 'answer'> = faqAnswerController,
   ) {}
 
@@ -46,11 +57,22 @@ export class VapiToolController {
     const toolName = toolCall.function.name
     const args = parseArguments(toolCall.function.arguments)
 
+    if (toolName === 'verify_caller') {
+      const params = VerifyCallerParamsSchema.safeParse(args)
+      if (!params.success) {
+        this.warnInvalid(toolCallId, params.error.issues[0]?.message, ctx)
+        return { toolCallId, error: MISSING_IDENTITY_INSTRUCTION }
+      }
+      return this.run(toolCallId, toolName, VERIFY_FAILURE_INSTRUCTION, ctx, () =>
+        this.eligibility.verifyCaller(params.data, ctx),
+      )
+    }
+
     if (toolName === 'check_insurance') {
       const params = CheckInsuranceParamsSchema.safeParse(args)
       if (!params.success) {
         this.warnInvalid(toolCallId, params.error.issues[0]?.message, ctx)
-        return { toolCallId, error: "Missing the caller's name. Ask the caller for their first name, then try again." }
+        return { toolCallId, error: MISSING_IDENTITY_INSTRUCTION }
       }
       return this.run(toolCallId, toolName, TOOL_FAILURE_INSTRUCTION, ctx, () =>
         this.eligibility.checkByCallerName(params.data, ctx),

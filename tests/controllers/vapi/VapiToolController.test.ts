@@ -14,7 +14,7 @@ const result: EligibilityCheckResult = {
 
 describe('VapiToolController', () => {
   const ctx = { requestId: 'test-request' }
-  const eligibility = { checkByCallerName: jest.fn() }
+  const eligibility = { checkByCallerName: jest.fn(), verifyCaller: jest.fn() }
   const faqs = { answer: jest.fn() }
   const controller = new VapiToolController(eligibility, faqs)
 
@@ -26,11 +26,16 @@ describe('VapiToolController', () => {
     eligibility.checkByCallerName.mockResolvedValue(result)
 
     const results = await controller.handleToolCalls(
-      [{ id: 'call-1', function: { name: 'check_insurance', arguments: { caller_name: 'Bob' } } }],
+      [
+        {
+          id: 'call-1',
+          function: { name: 'check_insurance', arguments: { caller_name: 'Bob', date_of_birth: '1991-02-02' } },
+        },
+      ],
       ctx,
     )
 
-    expect(eligibility.checkByCallerName).toHaveBeenCalledWith({ caller_name: 'Bob' }, ctx)
+    expect(eligibility.checkByCallerName).toHaveBeenCalledWith({ caller_name: 'Bob', date_of_birth: '1991-02-02' }, ctx)
     expect(results).toEqual([{ toolCallId: 'call-1', result: JSON.stringify(result) }])
   })
 
@@ -38,11 +43,16 @@ describe('VapiToolController', () => {
     eligibility.checkByCallerName.mockResolvedValue(result)
 
     await controller.handleToolCalls(
-      [{ id: 'call-1', function: { name: 'check_insurance', arguments: '{"caller_name":"Bob"}' } }],
+      [
+        {
+          id: 'call-1',
+          function: { name: 'check_insurance', arguments: '{"caller_name":"Bob","date_of_birth":"1991-02-02"}' },
+        },
+      ],
       ctx,
     )
 
-    expect(eligibility.checkByCallerName).toHaveBeenCalledWith({ caller_name: 'Bob' }, ctx)
+    expect(eligibility.checkByCallerName).toHaveBeenCalledWith({ caller_name: 'Bob', date_of_birth: '1991-02-02' }, ctx)
   })
 
   it('returns an error for missing arguments without calling the check', async () => {
@@ -52,7 +62,7 @@ describe('VapiToolController', () => {
     )
 
     expect(eligibility.checkByCallerName).not.toHaveBeenCalled()
-    expect(results[0]).toEqual({ toolCallId: 'call-1', error: expect.stringContaining('first name') })
+    expect(results[0]).toEqual({ toolCallId: 'call-1', error: expect.stringContaining('date of birth') })
   })
 
   it('returns an error for an unknown tool', async () => {
@@ -65,7 +75,12 @@ describe('VapiToolController', () => {
     eligibility.checkByCallerName.mockRejectedValue(new Error('database down'))
 
     const results = await controller.handleToolCalls(
-      [{ id: 'call-1', function: { name: 'check_insurance', arguments: { caller_name: 'James' } } }],
+      [
+        {
+          id: 'call-1',
+          function: { name: 'check_insurance', arguments: { caller_name: 'James', date_of_birth: '1991-02-02' } },
+        },
+      ],
       ctx,
     )
 
@@ -79,7 +94,10 @@ describe('VapiToolController', () => {
 
     const results = await controller.handleToolCalls(
       [
-        { id: 'a', function: { name: 'check_insurance', arguments: { caller_name: 'Bob' } } },
+        {
+          id: 'a',
+          function: { name: 'check_insurance', arguments: { caller_name: 'Bob', date_of_birth: '1991-02-02' } },
+        },
         { id: 'b', function: { name: 'nope' } },
       ],
       ctx,
@@ -138,5 +156,50 @@ describe('VapiToolController', () => {
       expect(results[0].error).toContain('Do not answer it from your own knowledge')
       expect(results[0].error).not.toContain('OpenAI')
     })
+  })
+
+  describe('verify_caller', () => {
+    it('verifies the caller and returns the result as a JSON string', async () => {
+      const verified = { outcome: 'verified', patient_id: 'p1', name: 'James', say: 'Thanks, James.' }
+      eligibility.verifyCaller.mockResolvedValue(verified)
+
+      const results = await controller.handleToolCalls(
+        [
+          {
+            id: 'call-1',
+            function: { name: 'verify_caller', arguments: { caller_name: 'James', date_of_birth: '1991-02-02' } },
+          },
+        ],
+        ctx,
+      )
+
+      expect(eligibility.verifyCaller).toHaveBeenCalledWith({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
+      expect(results).toEqual([{ toolCallId: 'call-1', result: JSON.stringify(verified) }])
+    })
+
+    it('asks for the date of birth in YYYY-MM-DD when it is missing or spoken', async () => {
+      const results = await controller.handleToolCalls(
+        [
+          {
+            id: 'call-1',
+            function: { name: 'verify_caller', arguments: { caller_name: 'James', date_of_birth: 'February 2nd' } },
+          },
+        ],
+        ctx,
+      )
+
+      expect(eligibility.verifyCaller).not.toHaveBeenCalled()
+      expect(results[0].error).toContain('YYYY-MM-DD')
+    })
+  })
+
+  it('refuses an insurance check without a date of birth', async () => {
+    const results = await controller.handleToolCalls(
+      [{ id: 'call-1', function: { name: 'check_insurance', arguments: { caller_name: 'James' } } }],
+      ctx,
+    )
+
+    expect(eligibility.checkByCallerName).not.toHaveBeenCalled()
+    expect(results[0].error).toContain('date of birth')
   })
 })

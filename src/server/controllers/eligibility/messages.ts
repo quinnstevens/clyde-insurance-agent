@@ -49,11 +49,14 @@ export const messages = {
     `Thanks, ${name}. The ${payer} plan we have on file for you is showing as inactive, and our clinic also doesn't accept ${payer}. ` +
     `We accept ${acceptedPayerList()}. If you have newer insurance, our front desk can update it for you.`,
 
+  // Same wording whether the name or the date of birth was wrong, so callers can't probe who's a patient.
   unknownCaller: () =>
-    `I'm sorry, I couldn't find a patient by that name in our records. Could you tell me your first name again, or spell it for me?`,
+    `I'm sorry, I couldn't find a patient with that name and date of birth. Could you tell me your first name and date of birth again?`,
+
+  verified: (name: string) => `Thanks, ${name}, I found your record. How can I help you today?`,
 
   ambiguousCaller: () =>
-    `I found more than one patient with that name. To make sure I look up the right person, our front desk will need to help with this one.`,
+    `I found more than one patient with that name and date of birth. To make sure I look up the right person, our front desk will need to help with this one.`,
 
   noInsuranceOnFile: (name: string) =>
     `Thanks, ${name}. I found your record, but we don't have any insurance on file for you yet, so I can't check your coverage. Our front desk can add your insurance for you.`,

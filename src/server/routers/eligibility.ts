@@ -11,7 +11,7 @@ router.use(requireToolSecret)
 
 /**
  * POST /eligibility/check
- * Body: { caller_name }. The same check the voice agent runs, without the Vapi envelope, so it can be
+ * Body: { caller_name, date_of_birth: 'YYYY-MM-DD' }. The same check the voice agent runs, without the Vapi envelope, so it can be
  * exercised with curl.
  */
 router.post(
