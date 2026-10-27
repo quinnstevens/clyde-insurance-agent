@@ -177,7 +177,7 @@ describe('VapiToolController', () => {
       expect(results).toEqual([{ toolCallId: 'call-1', result: JSON.stringify(verified) }])
     })
 
-    it('asks for the date of birth in YYYY-MM-DD when it is missing or spoken', async () => {
+    it('asks for the date of birth again when it is missing or unreadable', async () => {
       const results = await controller.handleToolCalls(
         [
           {
@@ -189,7 +189,7 @@ describe('VapiToolController', () => {
       )
 
       expect(eligibility.verifyCaller).not.toHaveBeenCalled()
-      expect(results[0].error).toContain('YYYY-MM-DD')
+      expect(results[0].error).toContain('say their date of birth again')
     })
   })
 
@@ -201,5 +201,21 @@ describe('VapiToolController', () => {
 
     expect(eligibility.checkByCallerName).not.toHaveBeenCalled()
     expect(results[0].error).toContain('date of birth')
+  })
+
+  it('reads a date of birth in the format the caller said it', async () => {
+    eligibility.verifyCaller.mockResolvedValue({ outcome: 'verified' })
+
+    await controller.handleToolCalls(
+      [
+        {
+          id: 'call-1',
+          function: { name: 'verify_caller', arguments: { caller_name: 'James', date_of_birth: '02/02/1991' } },
+        },
+      ],
+      ctx,
+    )
+
+    expect(eligibility.verifyCaller).toHaveBeenCalledWith({ caller_name: 'James', date_of_birth: '1991-02-02' }, ctx)
   })
 })

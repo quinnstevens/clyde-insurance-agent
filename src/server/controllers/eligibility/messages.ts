@@ -55,6 +55,17 @@ export const messages = {
 
   verified: (name: string) => `Thanks, ${name}, I found your record. How can I help you today?`,
 
+  // Read by the model. Without this it tends to run straight on into an insurance check.
+  verifiedNextStep:
+    "Say 'say' and then stop and wait for the caller to tell you what they need. Do not call check_insurance or " +
+    'answer_question until the caller asks for something.',
+
+  notVerifiedNextStep:
+    "Say 'say' and wait for their answer. Try verify_caller once more with what they tell you. If it fails again, " +
+    'tell them the front desk will need to help with their account; you can still answer general clinic questions.',
+
+  ambiguousNextStep: "Say 'say'. Don't check their insurance; you can still answer general clinic questions.",
+
   ambiguousCaller: () =>
     `I found more than one patient with that name and date of birth. To make sure I look up the right person, our front desk will need to help with this one.`,
 

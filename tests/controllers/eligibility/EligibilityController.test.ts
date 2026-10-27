@@ -255,6 +255,7 @@ describe('EligibilityController', () => {
         patient_id: patients.morgan.id,
         name: 'Morgan',
         say: 'Thanks, Morgan, I found your record. How can I help you today?',
+        next_step: expect.stringContaining('Do not call check_insurance or answer_question until the caller asks'),
       })
       expect(stedi.checkEligibility).not.toHaveBeenCalled()
     })

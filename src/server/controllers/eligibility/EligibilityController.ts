@@ -56,12 +56,30 @@ export class EligibilityController {
     if (match.kind === 'found') {
       const name = match.patient.preferred_name ?? match.patient.first_name
       logger.info('[EligibilityController] caller verified', { requestId: ctx.requestId, patientId: match.patient.id })
-      return { outcome: 'verified', patient_id: match.patient.id, name, say: messages.verified(name) }
+      return {
+        outcome: 'verified',
+        patient_id: match.patient.id,
+        name,
+        say: messages.verified(name),
+        next_step: messages.verifiedNextStep,
+      }
     }
     logger.info('[EligibilityController] caller not verified', { requestId: ctx.requestId, match: match.kind })
     return match.kind === 'ambiguous'
-      ? { outcome: 'ambiguous', patient_id: null, name: null, say: messages.ambiguousCaller() }
-      : { outcome: 'not_found', patient_id: null, name: null, say: messages.unknownCaller() }
+      ? {
+          outcome: 'ambiguous',
+          patient_id: null,
+          name: null,
+          say: messages.ambiguousCaller(),
+          next_step: messages.ambiguousNextStep,
+        }
+      : {
+          outcome: 'not_found',
+          patient_id: null,
+          name: null,
+          say: messages.unknownCaller(),
+          next_step: messages.notVerifiedNextStep,
+        }
   }
 
   async checkByCallerName(params: CheckInsuranceParams, ctx: RequestContext): Promise<EligibilityCheckResult> {

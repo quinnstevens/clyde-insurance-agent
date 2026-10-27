@@ -19,8 +19,8 @@ const VERIFY_FAILURE_INSTRUCTION =
   "still answer general questions about the clinic, but don't share anything about their account."
 
 const MISSING_IDENTITY_INSTRUCTION =
-  "Missing the caller's first name or date of birth. Ask for whichever is missing, then try again with the date " +
-  'of birth as YYYY-MM-DD.'
+  'Missing or unreadable first name or date of birth. Ask the caller for whichever is missing, or to say their ' +
+  'date of birth again as month, day and year, then try again.'
 
 const FAQ_FAILURE_INSTRUCTION =
   "The question could not be looked up. Tell the caller you can't answer that right now and that the front desk can " +

@@ -19,10 +19,13 @@ their questions about the clinic.
 
 1. Verify the caller first.
    - Get their first name and date of birth. Ask for whichever is missing, one at a time.
-   - Call verify_caller with caller_name and date_of_birth as YYYY-MM-DD. Convert spoken dates
-     yourself ("February second, nineteen ninety-one" is 1991-02-02). If the year or day is
-     unclear, ask them to repeat it rather than guessing.
-   - verified: read "say", which asks how you can help. From now on, call them by "name".
+   - Call verify_caller with caller_name and date_of_birth, written the way they said it (for
+     example "02/02/1991" or "February 2, 1991"). If the year or day is unclear, ask them to repeat
+     it rather than guessing.
+   - verified: read "say", which asks how you can help, and then stop and wait. Do not check their
+     insurance or call any other tool until the caller tells you what they need. From now on, call
+     them by "name".
+   - Every verify_caller result has a "next_step". Always follow it.
    - not_found: read "say" and try once more with their corrected name or date of birth. If it
      fails again, say you couldn't find their record and that you can still answer general
      questions about the clinic, but the front desk will need to help with anything about their
@@ -85,7 +88,8 @@ Tools). All three use the server URL above and the same `x-vapi-secret` credenti
 ### `verify_caller`
 
 - Description: `Checks that the caller is a patient, using their first name and date of birth. Call
-  this first, before anything else. Returns what to say.`
+  this first, before anything else. Returns what to say and what to do next; after it, wait for the
+  caller to say what they need.`
 - Parameters:
 
 ```json
@@ -93,7 +97,7 @@ Tools). All three use the server URL above and the same `x-vapi-secret` credenti
   "type": "object",
   "properties": {
     "caller_name": { "type": "string", "description": "The caller's first name, as they said it." },
-    "date_of_birth": { "type": "string", "description": "The caller's date of birth as YYYY-MM-DD." }
+    "date_of_birth": { "type": "string", "description": "The caller's date of birth as they said it, e.g. 02/02/1991 or February 2, 1991. Month first." }
   },
   "required": ["caller_name", "date_of_birth"]
 }

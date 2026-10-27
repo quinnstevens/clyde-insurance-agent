@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { normalizeDateOfBirth } from '@clyde-api/utils/dateOfBirth'
 
 /**
  * Who the caller says they are. Name alone isn't enough to share anything about a patient, so every
@@ -10,7 +11,11 @@ export const CallerIdentitySchema = z.object({
     .trim()
     .min(1, 'caller_name is required')
     .max(100, 'caller_name must be at most 100 characters'),
-  date_of_birth: z.iso.date({ error: 'date_of_birth must be a date in YYYY-MM-DD format' }),
+  // Accepts how people say dates (02/02/1991, February 2nd 1991, ...) and stores YYYY-MM-DD.
+  date_of_birth: z
+    .string({ error: 'date_of_birth is required' })
+    .transform((raw) => normalizeDateOfBirth(raw) ?? raw)
+    .pipe(z.iso.date({ error: 'date_of_birth must be a real date of birth, like 02/02/1991' })),
 })
 
 export type CallerIdentity = z.infer<typeof CallerIdentitySchema>
@@ -33,6 +38,8 @@ export const VerifyCallerResultSchema = z.object({
   /** The name to call them by, once verified. */
   name: z.string().nullable(),
   say: z.string(),
+  /** For the model, not the caller: what to do after saying `say`. */
+  next_step: z.string(),
 })
 export type VerifyCallerResult = z.infer<typeof VerifyCallerResultSchema>
 
