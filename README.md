@@ -31,6 +31,138 @@ reference. It does not solve any part of the take-home. Copy its shape for whate
 
 ---
 
+## What I built
+
+A phone agent for an eye clinic, on Vapi, backed by this API on Render. Callers verify who they are,
+then ask about their insurance or anything else about the clinic. Clinic staff manage the answers
+in a web app built with Lovable. The phone number and the app link are shared separately.
+
+### A call, step by step
+
+1. **"Can I get your first name?"**, then **"And what's your date of birth?"**
+2. **`verify_caller`** checks both against Postgres. A wrong name and a wrong birthday get the same
+   reply, so the phone line can't be used to find out who's a patient. Birthdays are read however
+   they're said: `02/02/1991`, `2/2/91`, "February second, nineteen ninety-one", "the second of
+   February", "two, two, one nine nine one" (month first, as in the US).
+3. **"How can I help you today?"** The caller leads:
+   - Insurance → **`check_insurance`** re-checks the birthday on the server (it never trusts that
+     verification ran), runs a real Stedi eligibility check (service type 30), and says whether
+     the clinic accepts the plan, whether it's active, and what they'll pay.
+   - Anything else → **`answer_question`** answers from the clinic's FAQ list (below).
+4. After each answer: "Is there anything else I can help with?" It hangs up only when the caller
+   says they're done.
+
+Every tool returns the exact sentence to say. The model reads it out; it never makes up coverage,
+prices or policies. The prompt and tool definitions are in
+[`docs/vapi/system-prompt.md`](docs/vapi/system-prompt.md).
+
+### Test callers
+
+Stedi's sandbox patients, seeded by a migration:
+
+| Say | Date of birth | Insurance | Expect |
+|---|---|---|---|
+| James | Feb 2, 1991 | Cigna | Accepted and active: "you're all set", 10% after a $250 deductible |
+| Jane | May 5, 1975 | Humana | Active, but not accepted: self-pay options |
+| Morgan | Jan 1, 1971 | UnitedHealthcare | Accepted, but inactive (the plan is under the name Jane Doe) |
+
+### Answering questions from the FAQ list
+
+250 hypothetical FAQs (generated with AI for this take-home) are seeded into a `faqs` table.
+
+1. **Store.** Each FAQ question is embedded with OpenAI `text-embedding-3-small` and stored in a
+   pgvector column. New and edited FAQs are embedded on save; anything missed is picked up on
+   startup or with `POST /faqs/reindex`.
+2. **Search.** A caller's question is embedded the same way, and pgvector ranks the FAQs by cosine
+   similarity (1 = same meaning).
+3. **Decide** (`src/server/controllers/faq/decide.ts`, thresholds in `src/config/faq.ts`):
+
+| Top match | What the agent does |
+|---|---|
+| ≥ 0.80 and clearly ahead of #2 | Reads that FAQ's answer word for word. No LLM call. |
+| 0.50 to 0.80, or two close matches with different answers | `gpt-4.1-mini` looks at the closest FAQs (up to 4) and picks one, asks the caller which they meant, or says none fits. It can only choose between committed answers, never write one. If it's down, the agent asks the caller instead of guessing. |
+| < 0.50 | "I don't have an answer to that one." The question goes to the clinic's inbox. |
+
+4. **Learn.** Every question is recorded in `caller_questions`. Unanswered ones are the clinic's
+   inbox: answering one adds it as an FAQ, and the agent can answer it on the next call.
+
+**Thresholds are measured, not guessed.** `yarn faqs:eval` runs 87 labeled questions (60
+paraphrases, 7 vague, 20 off-topic) against the real embeddings and sweeps the thresholds; `--full`
+runs the whole pipeline with the LLM. At the chosen settings the similarity step answers nothing
+with the wrong FAQ (my first guess, 0.75, did that 4 times), and end to end: 58 of 60 paraphrases
+answered correctly (one more got the right fact from a neighbouring FAQ; "where is the clinic"
+missed, see below), all 7 vague questions clarified or answered sensibly, and all 20 off-topic
+questions declined. Embedding question + answer together ranked the
+right FAQ first more often, but wasn't better end to end and sent more questions to the slower LLM
+step, so FAQs are embedded by question only.
+
+**Why pgvector and not mem0:** the FAQs are the clinic's exact, approved wording, edited by staff,
+so they belong in a table the clinic controls. mem0 would fit caller memory instead (e.g. "new
+insurance card coming"), recalled only after verification.
+
+### The clinic app (Lovable)
+
+A single page app for clinic staff, built with Lovable and talking only to this API: browse, search,
+add, edit, turn off and delete FAQs; import or export a CSV; **test a question** to see the matches,
+scores and what the agent would say; and work through the **inbox** of questions the agent couldn't
+answer. It asks for the admin key on first load and keeps it in the browser, not in the app's code.
+
+### API
+
+| Route | Auth | What it does |
+|---|---|---|
+| `POST /vapi/tools` | `x-vapi-secret` | Vapi's tool server: `verify_caller`, `check_insurance`, `answer_question` |
+| `POST /eligibility/check` | `x-vapi-secret` | `check_insurance` without the Vapi envelope, for curl |
+| `GET /faqs` | admin key | List, with `search`, `category`, `active` filters |
+| `POST /faqs`, `PATCH /faqs/:id`, `DELETE /faqs/:id` | admin key | Manage FAQs (edits re-embed) |
+| `POST /faqs/import` | admin key | Bulk load, `mode: append` (skips duplicates) or `replace` |
+| `POST /faqs/test` | admin key | Runs the agent's answer and explains it. Records nothing. |
+| `POST /faqs/reindex` | admin key | Embeds any FAQ that isn't searchable yet |
+| `GET /caller-questions` | admin key | What callers asked; `outcome=unanswered&status=open` is the inbox |
+| `POST /caller-questions/:id/resolve` | admin key | Answer an inbox question by adding it as an FAQ |
+| `PATCH /caller-questions/:id` | admin key | Dismiss (or reopen) an inbox question |
+
+The admin key is `Authorization: Bearer <ADMIN_API_KEY>`, separate from the Vapi secret. Browser
+calls are allowed from `CORS_ORIGINS` (`https://*.lovable.app`, `https://*.lovableproject.com`).
+
+### Configuration
+
+| Variable | Used for |
+|---|---|
+| `STEDI_API_KEY` | Stedi eligibility checks (test-mode key) |
+| `VAPI_TOOL_SECRET` | Shared secret on the Vapi tools |
+| `OPENAI_API_KEY` | Embeddings and the uncertain-match step |
+| `ADMIN_API_KEY` | The clinic app's API key |
+| `USE_CORS`, `CORS_ORIGINS` | Let the Lovable app call the API from the browser |
+| `OPENAI_CHAT_MODEL`, `FAQ_ANSWER_AT`, `FAQ_CONSIDER_FROM`, `FAQ_MARGIN` | Optional overrides |
+
+Without `VAPI_TOOL_SECRET` or `ADMIN_API_KEY`, production refuses those routes and development lets
+them through. Logs hold ids, never names, birthdays or caller questions; questions are stored only
+in `caller_questions`.
+
+### Running it locally
+
+Same quickstart as below. The local Postgres image is `pgvector/pgvector:pg17`. Add your keys to
+`.env` (see `.env.example`); with `OPENAI_API_KEY` set, the server embeds the seeded FAQs on startup.
+
+| Command | What it checks |
+|---|---|
+| `yarn test` | Unit tests. No database or network needed. |
+| `yarn test:db` | pgvector search, FAQ edits and the inbox against the real test Postgres (`yarn db:up` first) |
+| `yarn faqs:eval` / `yarn faqs:eval --full` | Threshold sweep / full pipeline on the 87 labeled questions (uses OpenAI) |
+
+### What I'd do next
+
+- **Alternate phrasings per FAQ.** "Where is the clinic?" misses "Where are you located?" because
+  the wording barely overlaps. Staff should be able to attach a caller's wording to an existing FAQ
+  from the inbox instead of adding a duplicate.
+- **Real logins for the clinic app** instead of one shared admin key, with a clinic per account.
+- **Live transfer** to the front desk instead of "the front desk will follow up".
+- **Monitoring** on check failures, unanswered rates and latency, plus caller memory (mem0) once
+  verification is in place.
+
+---
+
 ## Prerequisites
 
 - **Node 22**: `nvm use` picks it up from `.nvmrc`
@@ -43,7 +175,7 @@ reference. It does not solve any part of the take-home. Copy its shape for whate
 ```bash
 yarn                       # install dependencies
 cp .env.example .env       # local config (defaults already match docker-compose)
-yarn db:up                 # start Postgres 17 in Docker on :2534
+yarn db:up                 # start Postgres 17 + pgvector in Docker on :2534
 yarn migrate               # create the tables
 yarn dev                   # compile + run, restarting on every save
 ```
@@ -128,6 +260,8 @@ HTTP request
 | `yarn dev` | Watch mode: recompiles `src/` into `dist/` and restarts on each save |
 | `yarn build` / `yarn start` | One-off compile / run the compiled app |
 | `yarn test` | Unit tests (Jest). Run one file: `yarn test -- tests/controllers/patient` |
+| `yarn test:db` | Database tests against the throwaway test Postgres (pgvector search, FAQs, inbox) |
+| `yarn faqs:eval` | Measure FAQ routing on labeled questions; `--full` includes the LLM step |
 | `yarn typecheck` | Type-check `src/` **and** `tests/` |
 | `yarn lint` | ESLint + Prettier. Fix formatting with `yarn prettier --write "src/**/*.ts"` |
 | `yarn migrate` / `yarn migrate:down` | Apply / roll back migrations |
@@ -159,8 +293,9 @@ Production runs on Render, and so does this repo. Everything Render needs is dec
 
 ### After that
 
-- **Every push to `main` deploys automatically** once CI passes. CI is `.github/workflows/ci.yml`,
-  which runs lint, typecheck, tests, build and a Docker build.
+- **Every push to `main` deploys automatically** (`autoDeployTrigger: commit` in `render.yaml`).
+  `.github/workflows/ci.yml` runs lint, typecheck, tests, build and a Docker build, but the deploy
+  doesn't wait for it, so run `yarn lint && yarn typecheck && yarn test` before pushing.
 - **Migrations run on every deploy**, before the server starts. Commit a new migration file and push.
 - **Logs:** go to the service, then **Logs**. This is the same logger output you see locally.
 - **Environment variables and secrets:** go to the service, then **Environment**. Add them there,
