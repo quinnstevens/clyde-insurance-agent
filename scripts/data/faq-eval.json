@@ -14,7 +14,8 @@
     },
     {
       "question": "how late are you open on thursday",
-      "expected": "Do you have evening hours?"
+      "expected": "Do you have evening hours?",
+      "also_ok": ["What time do you close today?"]
     },
     {
       "question": "where is the clinic",
@@ -146,7 +147,8 @@
     },
     {
       "question": "what should i bring to my appointment",
-      "expected": "What should I bring to my eye exam?"
+      "expected": "What should I bring to my eye exam?",
+      "also_ok": ["What should I bring to my first visit?"]
     },
     {
       "question": "how long is a glasses prescription valid",

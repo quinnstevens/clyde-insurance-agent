@@ -15,10 +15,10 @@ const numberFromEnv = (name: string, fallback: number): number => {
 }
 
 export const FAQ_THRESHOLDS = {
-  answerAt: numberFromEnv('FAQ_ANSWER_AT', 0.75),
+  answerAt: numberFromEnv('FAQ_ANSWER_AT', 0.8),
   considerFrom: numberFromEnv('FAQ_CONSIDER_FROM', 0.5),
   /** How far #1 must be ahead of #2 to skip the LLM when both are above `answerAt`. */
-  margin: numberFromEnv('FAQ_MARGIN', 0.05),
+  margin: numberFromEnv('FAQ_MARGIN', 0.08),
 }
 
 export type FaqThresholds = typeof FAQ_THRESHOLDS

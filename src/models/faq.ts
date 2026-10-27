@@ -7,7 +7,7 @@ export default class Faq extends Model {
   category!: string | null
   /** Inactive FAQs stay in the list for the clinic but are never used to answer callers. */
   active!: boolean
-  /** pgvector column. Never selected; written with `vectorValue` from `@clyde-api/utils/pgvector`. */
+  /** pgvector column. Never selected; written with `toSql` from `@clyde-api/utils/pgvector`. */
   embedding?: unknown
   /**
    * The `question` text `embedding` was made from, set in the same write. Null until embedded, and

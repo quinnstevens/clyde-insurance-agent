@@ -1,9 +1,11 @@
 /**
  * The clinic's approved questions and answers, plus every question callers ask the agent.
  *
- * `embedding` is the OpenAI text-embedding-3-small vector of `question` (1536 dimensions). It is
- * filled in by the server, not here, so it is null until the server has embedded the row.
- * `embedded_question` records which text the vector came from, so an edited question gets re-embedded.
+ * `embedding` is the OpenAI text-embedding-3-small vector (1536 dimensions) of `question`. (Embedding
+ * the question and answer together ranked the right FAQ first more often, but `yarn faqs:eval --full`
+ * came out no better end to end and sent more questions to the slower LLM step.) It is filled in by
+ * the server, not here, so it is null until the server has embedded the row. `embedded_question`
+ * records which text the vector came from, so an edited question gets re-embedded.
  *
  * @param { import("knex").Knex } knex
  */

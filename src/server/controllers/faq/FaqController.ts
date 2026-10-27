@@ -5,7 +5,7 @@ import { AppError } from '@clyde-api/types/errors'
 import { getKnex } from '@clyde-api/utils/database'
 import logger from '@clyde-api/utils/logger'
 import { openai, type OpenAIClient } from '@clyde-api/utils/openai'
-import { vectorValue } from '@clyde-api/utils/pgvector'
+import { toSql } from '@clyde-api/utils/pgvector'
 import type {
   CallerQuestionResult,
   CreateFaqParams,
@@ -41,7 +41,7 @@ const toFaqResult = (faq: Faq): FaqResult => ({
   answer: faq.answer,
   category: faq.category,
   active: faq.active,
-  searchable: faq.embedded_question !== null && faq.embedded_question === faq.question,
+  searchable: faq.embedded_question === faq.question,
   times_used: faq.times_used,
   last_used_at: iso(faq.last_used_at),
   created_at: iso(faq.created_at)!,
@@ -66,8 +66,8 @@ const toCallerQuestionResult = (row: CallerQuestion & { faq_question?: string | 
 const sameQuestion = (text: string) => text.trim().toLowerCase()
 
 /**
- * The clinic's side of the FAQ list: what the management app calls. Every write re-embeds what it
- * changed. If OpenAI is down the write still succeeds and the row comes back `searchable: false`;
+ * The clinic's side of the FAQ list: what the management app calls. Every write that changes a
+ * question re-embeds it. If OpenAI is down the write still succeeds and the row comes back `searchable: false`;
  * `embedPending` picks it up later (it also runs on startup).
  */
 export class FaqController {
@@ -104,7 +104,7 @@ export class FaqController {
   async update(id: string, params: UpdateFaqParams, ctx: RequestContext): Promise<FaqResult> {
     const faq = await Faq.query().patchAndFetchById(id, params)
     if (!faq) throw AppError.notFound('FAQ not found', { requestId: ctx.requestId, faqId: id })
-    if (params.question !== undefined && faq.embedded_question !== faq.question) await this.embedRows([faq], ctx)
+    if (faq.embedded_question !== faq.question) await this.embedRows([faq], ctx)
     logger.info('[FaqController] updated faq', { requestId: ctx.requestId, faqId: id })
     return this.get(id, ctx)
   }
@@ -204,12 +204,11 @@ export class FaqController {
         )
         await getKnex().transaction(async (trx) => {
           for (const [j, row] of batch.entries()) {
-            await Faq.query(trx)
-              .findById(row.id)
-              .patch({
-                embedding: vectorValue(vectors[j]),
-                embedded_question: row.question,
-              } as unknown as Partial<Faq>)
+            // Plain Knex, like markUsed: indexing isn't an edit, so updated_at stays put.
+            await Faq.knexQuery()
+              .transacting(trx)
+              .where('id', row.id)
+              .update({ embedding: toSql(vectors[j]), embedded_question: row.question })
           }
         })
         embedded += batch.length

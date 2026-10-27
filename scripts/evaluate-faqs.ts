@@ -21,7 +21,8 @@ import { closeDb, connectDb } from '@clyde-api/utils/database'
 import { openai } from '@clyde-api/utils/openai'
 
 interface EvalCases {
-  paraphrases: { question: string; expected: string }[]
+  /** `also_ok`: other FAQs that give the same facts, so answering with them isn't wrong. */
+  paraphrases: { question: string; expected: string; also_ok?: string[] }[]
   ambiguous: { question: string; acceptable: string[] }[]
   off_topic: { question: string }[]
 }
@@ -40,7 +41,11 @@ const pct = (n: number, d: number) => `${Math.round((100 * n) / Math.max(d, 1))}
 const loadCases = async (): Promise<Case[]> => {
   const raw = JSON.parse(readFileSync(resolve(__dirname, 'data/faq-eval.json'), 'utf8')) as EvalCases
   const cases: Omit<Case, 'matches'>[] = [
-    ...raw.paraphrases.map((c) => ({ kind: 'paraphrase' as const, question: c.question, acceptable: [c.expected] })),
+    ...raw.paraphrases.map((c) => ({
+      kind: 'paraphrase' as const,
+      question: c.question,
+      acceptable: [c.expected, ...(c.also_ok ?? [])],
+    })),
     ...raw.ambiguous.map((c) => ({ kind: 'ambiguous' as const, question: c.question, acceptable: c.acceptable })),
     ...raw.off_topic.map((c) => ({ kind: 'off_topic' as const, question: c.question, acceptable: [] })),
   ]

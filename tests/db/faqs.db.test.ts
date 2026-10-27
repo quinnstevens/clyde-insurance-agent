@@ -94,7 +94,7 @@ describe('FAQs against Postgres + pgvector', () => {
     expect((await faqs.get(hours.id, ctx)).searchable).toBe(false)
   })
 
-  it('re-embeds an edited question and skips duplicate imports', async () => {
+  it('re-embeds an edited question, not other edits, and skips duplicate imports', async () => {
     await seed()
     const result = await faqs.import(
       {
@@ -113,6 +113,10 @@ describe('FAQs against Postgres + pgvector', () => {
 
     expect(updated.searchable).toBe(true)
     expect(fakeClient.embed).toHaveBeenLastCalledWith(['Is parking free?'], ctx)
+
+    const embedCalls = fakeClient.embed.mock.calls.length
+    await faqs.update(parking.id, { answer: 'Yes, behind the building.', category: 'Parking' }, ctx)
+    expect(fakeClient.embed).toHaveBeenCalledTimes(embedCalls)
   })
 
   it('embedPending fills in rows that have no vector yet', async () => {
